@@ -3,3 +3,38 @@
   padding: 0;
   border: none;
 }
+
+.header {
+  background-color: #373b53;
+  width: 100vw;
+  height: 72px;
+
+  display: flex;
+}
+
+.header-logo-container {
+  background-color: #7c5dfa;
+  width: 72px;
+  height: 72px;
+  border-radius: 0 20px 20px 0;
+
+  position: relative;
+}
+
+.header-logo-container span {
+  width: 72px;
+  height: 36px;
+  background-color: #9277ff;
+  border-radius: 20px 0 20px 0;
+
+  position: absolute;
+  bottom: 0;
+  /* transform: translateY(50%); */
+}
+
+.header-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
