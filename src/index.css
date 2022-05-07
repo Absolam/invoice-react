@@ -1,7 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=League+Spartan");
+
 * {
   margin: 0;
   padding: 0;
   border: none;
+  font-family: "League Spartan", sans-serif;
+}
+
+body {
+  height: 100vh;
 }
 
 .header {
@@ -65,4 +72,5 @@
   height: 20px;
   color: #7e88c3;
   padding: 0 1.5rem;
+  cursor: pointer;
 }
