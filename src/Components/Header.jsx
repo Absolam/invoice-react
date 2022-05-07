@@ -9,8 +9,11 @@ export const Header = () => {
         <span></span>
         <Logo className="header-logo" />
       </div>
-      <BsFillMoonFill />
-      <BsFillPersonFill />
+      <div className="header-icon-pic-container">
+        <BsFillMoonFill className="icon-moon" />
+        <span></span>
+        <BsFillPersonFill className="icon-person" />
+      </div>
     </div>
   );
 };

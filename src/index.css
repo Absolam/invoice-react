@@ -10,6 +10,7 @@
   height: 72px;
 
   display: flex;
+  justify-content: space-between;
 }
 
 .header-logo-container {
@@ -37,4 +38,31 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.header-icon-pic-container {
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+  /* padding: 0 2rem; */
+}
+
+.header-icon-pic-container span {
+  height: 72px;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.29);
+}
+
+.icon-person {
+  width: 32px;
+  height: 32px;
+  color: #7e88c3;
+  padding: 0 1.5rem;
+}
+
+.icon-moon {
+  width: 20px;
+  height: 20px;
+  color: #7e88c3;
+  padding: 0 1.5rem;
 }
