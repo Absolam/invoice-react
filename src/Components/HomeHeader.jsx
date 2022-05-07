@@ -1,5 +1,6 @@
 import { ReactComponent as Arrow } from "../images/icon-arrow-down.svg";
 import { ReactComponent as Plus } from "../images/icon-plus.svg";
+import { Link } from "react-router-dom";
 
 export const HomeHeader = () => {
   function checkInvoices(invoices) {
@@ -19,10 +20,10 @@ export const HomeHeader = () => {
           <h3>Filter</h3>
           <Arrow />
         </div>
-        <div className="home-header-button-container">
+        <Link to="/create" className="home-header-button-container">
           <Plus className="icon-plus" />
           <p>New</p>
-        </div>
+        </Link>
       </div>
     </div>
   );

@@ -12,10 +12,11 @@
 .home-header-status-container {
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
 }
 
 .home-header-status-container h3 {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
   color: #888eb0;
 }
@@ -91,10 +92,14 @@
 }
 
 .empty-text h3 {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .empty-text p {
-  font-size: 12px;
+  font-size: 15px;
   color: #888eb0;
+}
+
+.empty-text span {
+  font-weight: 700;
 }
