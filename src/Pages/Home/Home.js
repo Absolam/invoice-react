@@ -1,10 +1,15 @@
 import { HomeEmpty } from "../../Components/HomeEmpty";
+import { HomeFull } from "../../Components/HomeFull";
 import "./index.css";
 
-export const Home = () => {
+export const Home = ({ listOfInvoices, setListOfInvocies }) => {
   return (
     <div className="home">
-      <HomeEmpty />
+      {listOfInvoices.length > 0 ? (
+        <HomeFull listOfInvoices={listOfInvoices} />
+      ) : (
+        <HomeEmpty listOfInvoices={listOfInvoices} />
+      )}
     </div>
   );
 };

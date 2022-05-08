@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem;
+  margin: 0.5rem 0;
 }
 
 .home-header-status-container {
@@ -102,4 +103,117 @@
 
 .empty-text span {
   font-weight: 700;
+}
+
+.home-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0rem 24px;
+}
+
+.home-list-single {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-size: 15px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.home-list-single span {
+  color: #888eb0;
+}
+
+.invoice-date-payment {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.invoice-name {
+  text-align: right;
+  color: #888eb0;
+}
+
+.invoice-date {
+  color: #888eb0;
+}
+
+.invoice-status-container--paid {
+  background-color: #33d6a01c;
+  display: flex;
+  justify-content: center;
+  justify-self: end;
+  padding: 0.8rem 0;
+  border-radius: 6px;
+  width: 90%;
+}
+.invoice-status-container--pending {
+  background-color: #ff910020;
+  display: flex;
+  justify-content: center;
+  justify-self: end;
+  padding: 0.8rem 0;
+  border-radius: 6px;
+  width: 90%;
+}
+.invoice-status-container--draft {
+  background-color: #373b531c;
+  display: flex;
+  justify-content: center;
+  justify-self: end;
+  padding: 0.8rem 0;
+  border-radius: 6px;
+  width: 90%;
+}
+
+.invoice-status--paid p {
+  background-color: #33d69f;
+}
+
+.invoice-status--pending p {
+  background-color: #ff8f00;
+}
+
+.invoice-status--draft p {
+  background-color: #373b53;
+}
+
+.invoice-status--paid {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #33d69f;
+  font-weight: 700;
+}
+
+.invoice-status--pending {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ff8f00;
+  font-weight: 700;
+}
+
+.invoice-status--draft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #373b53;
+  font-weight: 700;
+}
+
+.invoice-status-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.invoice-total {
+  font-weight: 700;
+  font-size: 18px;
 }
