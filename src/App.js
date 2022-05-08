@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { Home } from "./Pages/Home/Home";
-import { View } from "./Pages/View";
+import { View } from "./Pages/View/View";
 import { Edit } from "./Pages/Edit";
 import { Create } from "./Pages/Create";
 import { Header } from "./Components/Header";
@@ -84,7 +84,7 @@ function App() {
       paymentTerms: 7,
       clientName: "John Morrison",
       clientEmail: "jm@myco.com",
-      status: "Paid",
+      status: "Draft",
       senderAddress: {
         street: "19 Union Terrace",
         city: "London",
@@ -239,6 +239,38 @@ function App() {
     },
   ]);
 
+  const [currentInvoice, setCurrentInvoice] = useState({
+    id: "RT3080",
+    createdAt: "2021-08-18",
+    paymentDue: "2021-08-19",
+    description: "Re-branding",
+    paymentTerms: 1,
+    clientName: "Jensen Huang",
+    clientEmail: "jensenh@mail.com",
+    status: "Paid",
+    senderAddress: {
+      street: "19 Union Terrace",
+      city: "London",
+      postCode: "E1 3EZ",
+      country: "United Kingdom",
+    },
+    clientAddress: {
+      street: "106 Kendell Street",
+      city: "Sharrington",
+      postCode: "NR24 5WQ",
+      country: "United Kingdom",
+    },
+    items: [
+      {
+        name: "Brand Guidelines",
+        quantity: 1,
+        price: 1800.9,
+        total: 1800.9,
+      },
+    ],
+    total: 1800.9,
+  });
+
   return (
     <Router>
       <Header />
@@ -249,10 +281,14 @@ function App() {
             <Home
               listOfInvoices={listOfInvoices}
               setListOfInvoices={setListOfInvoices}
+              setCurrentInvoice={setCurrentInvoice}
             />
           }
         />
-        <Route path="/view" element={<View />} />
+        <Route
+          path="/view"
+          element={<View currentInvoice={currentInvoice} />}
+        />
         <Route path="/edit" element={<Edit />} />
         <Route path="/create" element={<Create />} />
       </Routes>

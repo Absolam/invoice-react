@@ -8,6 +8,11 @@
   font-family: "League Spartan", sans-serif;
 }
 
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
 body {
   height: 100vh;
   background-color: #f8f8fb;
@@ -75,4 +80,12 @@ body {
   color: #7e88c3;
   padding: 0 1.5rem;
   cursor: pointer;
+}
+
+.go-back {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+  width: fit-content;
 }
