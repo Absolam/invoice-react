@@ -77,10 +77,6 @@
   font-size: 16px;
 }
 
-.invoice-item-qty-price {
-  /* display: flex; */
-}
-
 .invoice-item-grand-total {
   background-color: #373b53;
   padding: 1.5rem;
