@@ -17,7 +17,9 @@ export const ViewInvoice = ({ currentInvoice }) => {
   return (
     <div className="view-invoice">
       <div>
-        <p>#{id}</p>
+        <p className="invoice-id">
+          #<span>{id}</span>
+        </p>
         <p>{description}</p>
       </div>
       <div className="sender-address">

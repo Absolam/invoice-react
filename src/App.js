@@ -287,7 +287,13 @@ function App() {
         />
         <Route
           path="/view"
-          element={<View currentInvoice={currentInvoice} />}
+          element={
+            <View
+              currentInvoice={currentInvoice}
+              listOfInvoices={listOfInvoices}
+              setListOfInvoices={setListOfInvoices}
+            />
+          }
         />
         <Route path="/edit" element={<Edit />} />
         <Route path="/create" element={<Create />} />

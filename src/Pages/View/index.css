@@ -2,7 +2,7 @@
   margin: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .view-status-container {
@@ -91,4 +91,9 @@
 .invoice-item-grand-total span {
   font-size: 20px;
   color: white;
+}
+
+.invoice-id {
+  font-weight: 700;
+  font-size: 18px;
 }
