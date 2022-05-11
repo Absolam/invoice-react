@@ -1,0 +1,113 @@
+.create {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: white;
+}
+
+.bill-from h3 {
+  color: #7c5dfa;
+  font-size: 14px;
+}
+
+.bill-from-grid {
+  display: grid;
+  grid-template-areas: "street street" "city zip" "country country";
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.bill-from-grid input {
+  height: 32px;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #dfe3fa;
+  padding: 1rem 0.75rem;
+  width: 100%;
+}
+
+.bill-from-grid label {
+  color: #7e88c3;
+  font-size: 14px;
+}
+
+.from-street {
+  grid-area: street;
+  display: flex;
+  flex-direction: column;
+}
+
+.from-city {
+  grid-area: city;
+  display: flex;
+  flex-direction: column;
+}
+
+.from-post-code {
+  grid-area: zip;
+  display: flex;
+  flex-direction: column;
+}
+
+.from-country {
+  grid-area: country;
+  display: flex;
+  flex-direction: column;
+}
+
+.bill-to h3 {
+  color: #7c5dfa;
+  font-size: 14px;
+}
+
+.bill-to-grid {
+  display: grid;
+  grid-template-areas: "name name" "email email" "street street" "city zip" "country country";
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.bill-to-grid input {
+  height: 32px;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #dfe3fa;
+  padding: 1rem 0.75rem;
+  width: 100%;
+}
+
+.bill-to-grid label {
+  color: #7e88c3;
+  font-size: 14px;
+}
+
+.to-name {
+  grid-area: name;
+  display: flex;
+  flex-direction: column;
+}
+
+.to-street {
+  grid-area: street;
+  display: flex;
+  flex-direction: column;
+}
+
+.to-city {
+  grid-area: city;
+  display: flex;
+  flex-direction: column;
+}
+
+.to-post-code {
+  grid-area: zip;
+  display: flex;
+  flex-direction: column;
+}
+
+.to-country {
+  grid-area: country;
+  display: flex;
+  flex-direction: column;
+}

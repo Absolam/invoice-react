@@ -6,6 +6,7 @@
   border: none;
   text-decoration: none;
   font-family: "League Spartan", sans-serif;
+  box-sizing: border-box;
 }
 
 a:visited {
@@ -88,6 +89,10 @@ body {
   gap: 1rem;
   font-weight: 700;
   width: fit-content;
+}
+
+.go-back p {
+  height: 12px;
 }
 
 .bottom-bar {
