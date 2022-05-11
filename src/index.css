@@ -72,14 +72,14 @@ body {
   width: 32px;
   height: 32px;
   color: #7e88c3;
-  padding: 0 1.5rem;
+  margin: 1rem;
 }
 
 .icon-moon {
   width: 20px;
   height: 20px;
   color: #7e88c3;
-  padding: 0 1.5rem;
+  margin: 1rem;
   cursor: pointer;
 }
 
