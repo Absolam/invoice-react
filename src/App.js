@@ -64,17 +64,17 @@ function App() {
         {
           name: "Banner Design",
           quantity: 1,
-          price: 156.0,
-          total: 156.0,
+          price: 156.5,
+          total: 156.5,
         },
         {
           name: "Email Design",
           quantity: 2,
-          price: 200.0,
-          total: 400.0,
+          price: 200.1,
+          total: 400.2,
         },
       ],
-      total: 556.0,
+      total: 556.7,
     },
     {
       id: "RG0314",

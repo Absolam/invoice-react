@@ -5,8 +5,13 @@ import { BottomBar } from "../../Components/BottomBar";
 import { Button } from "../../Components/Buttons";
 import "../View/index.css";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export const View = ({ currentInvoice, listOfInvoices, setListOfInvoices }) => {
+  useEffect(() => {
+    document.title = "Invoice | View";
+  }, []);
+
   function deleteInvoice(id) {
     const newList = listOfInvoices.filter((invoice) => invoice.id !== id);
     setListOfInvoices(newList);
