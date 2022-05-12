@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/invoice-react/static/css/main.f4bc9a59.css",
+    "main.css": "/invoice-react/static/css/main.b2b7de04.css",
     "main.js": "/invoice-react/static/js/main.a25e2788.js",
     "static/media/illustration-empty.svg": "/invoice-react/static/media/illustration-empty.e3122ec28052ac246263daf21c5e9764.svg",
     "index.html": "/invoice-react/index.html",
@@ -8,11 +8,11 @@
     "static/media/icon-plus.svg": "/invoice-react/static/media/icon-plus.278c048a38de266d0e5bdbb8bcaaf395.svg",
     "static/media/icon-arrow-left.svg": "/invoice-react/static/media/icon-arrow-left.e9bb76376b884042fecf1abba1419934.svg",
     "static/media/icon-arrow-down.svg": "/invoice-react/static/media/icon-arrow-down.a6ed7bfffecda935c666fda2939c385c.svg",
-    "main.f4bc9a59.css.map": "/invoice-react/static/css/main.f4bc9a59.css.map",
+    "main.b2b7de04.css.map": "/invoice-react/static/css/main.b2b7de04.css.map",
     "main.a25e2788.js.map": "/invoice-react/static/js/main.a25e2788.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4bc9a59.css",
+    "static/css/main.b2b7de04.css",
     "static/js/main.a25e2788.js"
   ]
 }
