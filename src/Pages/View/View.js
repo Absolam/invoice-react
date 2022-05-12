@@ -18,7 +18,7 @@ export const View = ({ currentInvoice, listOfInvoices, setListOfInvoices }) => {
   }
 
   function markPaid(id) {
-    const grabInvoice = listOfInvoices.filter((invoice) => invoice.id == id);
+    const grabInvoice = listOfInvoices.filter((invoice) => invoice.id === id);
     const newList = listOfInvoices.filter((invoice) => invoice.id !== id);
     grabInvoice[0].status = "Paid";
     newList.unshift(grabInvoice[0]);

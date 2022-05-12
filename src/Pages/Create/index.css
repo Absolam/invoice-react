@@ -63,7 +63,11 @@
 
 .bill-to-grid {
   display: grid;
-  grid-template-areas: "name name" "email email" "street street" "city zip" "country country";
+  grid-template-areas:
+    "name name" "email email"
+    "street street" "city zip"
+    "country country" "date date"
+    "terms terms";
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -88,6 +92,12 @@
   flex-direction: column;
 }
 
+.to-email {
+  grid-area: email;
+  display: flex;
+  flex-direction: column;
+}
+
 .to-street {
   grid-area: street;
   display: flex;
@@ -108,6 +118,18 @@
 
 .to-country {
   grid-area: country;
+  display: flex;
+  flex-direction: column;
+}
+
+.to-date {
+  grid-area: date;
+  display: flex;
+  flex-direction: column;
+}
+
+.to-terms {
+  grid-area: terms;
   display: flex;
   flex-direction: column;
 }
