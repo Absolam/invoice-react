@@ -1,3 +1,3 @@
-export const BottomBar = ({ children }) => {
-  return <div className="bottom-bar">{children}</div>;
+export const BottomBar = ({ children, clname }) => {
+  return <div className={`bottom-bar ${clname}`}>{children}</div>;
 };

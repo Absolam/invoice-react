@@ -1,9 +1,10 @@
 .create {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   padding: 2rem;
   background-color: white;
+  position: relative;
 }
 
 .bill-from h3 {
@@ -14,7 +15,7 @@
 .bill-from-grid {
   display: grid;
   grid-template-areas: "street street" "city zip" "country country";
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 
@@ -67,8 +68,8 @@
     "name name" "email email"
     "street street" "city zip"
     "country country" "date date"
-    "terms terms";
-  gap: 1rem;
+    "terms terms" "desc desc";
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 
@@ -132,4 +133,108 @@
   grid-area: terms;
   display: flex;
   flex-direction: column;
+}
+
+.to-desc {
+  grid-area: desc;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-list-grid {
+  display: grid;
+  grid-template-areas:
+    "name name name name name name"
+    "qty price price total total delete";
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.item-list-grid input {
+  height: 32px;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #dfe3fa;
+  padding: 1rem 0.75rem;
+  width: 100%;
+}
+
+.item-list-grid label {
+  color: #7e88c3;
+  font-size: 14px;
+}
+
+.item-list-header {
+  color: #777f98;
+  /* font-size: 14px; */
+}
+
+.item-name {
+  grid-area: name;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-qty {
+  grid-area: qty;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-price {
+  grid-area: price;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-total {
+  grid-area: total;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-delete {
+  grid-area: delete;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-list-array {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.add-item {
+  padding: 1rem;
+  border-radius: 24px;
+  background-color: #f2f4fc;
+  color: #7e88c3;
+  font-weight: 700;
+  margin: 2rem 0 9rem 0;
+}
+
+.create-bottom-bar {
+  box-shadow: 0px -20px 40px rgba(0, 0, 0, 0.192);
+  padding: 1rem 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.create-discard-button {
+  background-color: #f9fafe;
+  color: #7e88c3;
+  padding: 1rem 1.5rem;
+  border-radius: 24px;
+}
+
+.create-save-button {
+  background-color: #7c5dfa;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 24px;
 }

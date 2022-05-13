@@ -35,6 +35,10 @@ export const CreateBillTo = () => {
           <label htmlFor="to-terms">Payment Terms</label>
           <input type="text" id="to-terms" />
         </div>
+        <div className="to-desc">
+          <label htmlFor="to-desc">Project Description</label>
+          <input type="text" id="to-desc" />
+        </div>
       </form>
     </div>
   );
