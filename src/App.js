@@ -271,6 +271,8 @@ function App() {
     total: 1800.9,
   });
 
+  const [newInvoice, setNewInvoice] = useState({});
+
   return (
     <Router>
       <Header />
@@ -296,7 +298,17 @@ function App() {
           }
         />
         <Route path="/edit" element={<Edit />} />
-        <Route path="/create" element={<Create />} />
+        <Route
+          path="/create"
+          element={
+            <Create
+              newInvoice={newInvoice}
+              setNewInvoice={setNewInvoice}
+              listOfInvoices={listOfInvoices}
+              setListOfInvoices={setListOfInvoices}
+            />
+          }
+        />
       </Routes>
     </Router>
   );

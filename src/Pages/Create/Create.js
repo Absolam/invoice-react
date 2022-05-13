@@ -5,22 +5,33 @@ import { CreateBillTo } from "../../Components/CreateBillTo";
 import { CreateItemList } from "../../Components/CreateItemList";
 import { BottomBar } from "../../Components/BottomBar";
 import { Button } from "../../Components/Buttons";
+import { Link } from "react-router-dom";
 import "../Create/index.css";
 // import "../../index.css";
 
-export const Create = () => {
+export const Create = ({
+  newInvoice,
+  setNewInvoice,
+  listOfInvoices,
+  setListOfInvoices,
+}) => {
   useEffect(() => {
     document.title = "Invoice | Create";
   }, []);
 
   let test = [1, 2];
 
+  function send() {
+    setListOfInvoices((listOfInvoices) => [newInvoice, ...listOfInvoices]);
+    console.log(listOfInvoices);
+  }
+
   return (
     <div className="create">
       <GoBack />
       <h2>New Invoice</h2>
-      <CreateBillFrom />
-      <CreateBillTo />
+      <CreateBillFrom newInvoice={newInvoice} setNewInvoice={setNewInvoice} />
+      <CreateBillTo newInvoice={newInvoice} setNewInvoice={setNewInvoice} />
       <div className="item-list-array">
         <h3 className="item-list-header">Item List</h3>
         {test.map((item) => (
@@ -30,7 +41,9 @@ export const Create = () => {
       </div>
       <BottomBar clname="create-bottom-bar">
         <Button text="Discard" clname="create-discard-button" />
-        <Button text="Save & Send" clname="create-save-button" />
+        <Link to="/">
+          <Button text="Save & Send" clname="create-save-button" event={send} />
+        </Link>
       </BottomBar>
     </div>
   );
