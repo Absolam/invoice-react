@@ -27,6 +27,8 @@ export const Create = ({
         id={randomNumber(99999)}
         removeItemList={removeItemList}
         setNewInvoice={setNewInvoice}
+        itemValues={itemValues}
+        setItemValues={setItemValues}
       />,
     ]);
   }, []);
@@ -38,6 +40,8 @@ export const Create = ({
         key={randomNumber(10000)}
         id={randomNumber(99999)}
         removeItemList={removeItemList}
+        itemValues={itemValues}
+        setItemValues={setItemValues}
       />,
     ]);
   }
@@ -45,6 +49,9 @@ export const Create = ({
   function removeItemList(id) {
     if (itemList.length > 0) {
       setItemList((newList) => newList.filter((item) => item.props.id !== id));
+    }
+    if (itemList.length > 0) {
+      setItemValues((newList) => newList.filter((item) => item.id !== id));
     }
   }
 
@@ -60,7 +67,7 @@ export const Create = ({
   return (
     <div className="create">
       <GoBack />
-      <h2 onClick={() => console.log(newInvoice)}>New Invoice</h2>
+      <h2 onClick={() => console.log(itemValues)}>New Invoice</h2>
       <CreateBillFrom newInvoice={newInvoice} setNewInvoice={setNewInvoice} />
       <CreateBillTo newInvoice={newInvoice} setNewInvoice={setNewInvoice} />
       <div className="item-list-array">

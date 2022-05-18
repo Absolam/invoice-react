@@ -1,18 +1,37 @@
-import { React, useState } from "react";
+import { React, useEffect } from "react";
 import trash from "../images/icon-delete.svg";
 
-export const CreateItemList = ({ id, removeItemList, setNewInvoice }) => {
+export const CreateItemList = ({
+  id,
+  removeItemList,
+  setNewInvoice,
+  itemValues,
+  setItemValues,
+}) => {
+  useEffect(() => {
+    setItemValues((prevState) => [...prevState, { id: id }]);
+  }, []);
+
   function remove(id) {
     removeItemList(id);
   }
 
   function change(event) {
     const value = event.target.value;
+    const name = event.target.name;
 
-    setNewInvoice((prevState) => ({
-      ...prevState,
-      items: { ...prevState.items, [event.target.name]: value },
-    }));
+    // setItemValues((prevState) => [
+    //   ...prevState,
+    //   { [id]: { ...prevState[id], [name]: value, id: id } },
+    // ]);
+
+    setItemValues((prevState) => {
+      return prevState.map((item) => {
+        if (item.id === id) {
+          return { ...item, [name]: value };
+        } else return item;
+      });
+    });
   }
 
   return (
