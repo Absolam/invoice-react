@@ -11,7 +11,7 @@ export const HomeList = ({ listOfInvoices, setCurrentInvoice }) => {
     <div className="home-list">
       {listOfInvoices.map((invoice) => (
         <Link
-          to="/view"
+          to="/invoice-react/view"
           key={invoice.id}
           onClick={() => getInvoice(invoice.id)}
         >

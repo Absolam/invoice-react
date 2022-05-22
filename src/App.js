@@ -278,7 +278,7 @@ function App() {
       <Header />
       <Routes>
         <Route
-          path="/"
+          path="/invoice-react"
           element={
             <Home
               listOfInvoices={listOfInvoices}
@@ -288,7 +288,7 @@ function App() {
           }
         />
         <Route
-          path="/view"
+          path="/invoice-react/view"
           element={
             <View
               currentInvoice={currentInvoice}
@@ -299,7 +299,7 @@ function App() {
         />
         <Route path="/edit" element={<Edit />} />
         <Route
-          path="/create"
+          path="/invoice-react/create"
           element={
             <Create
               newInvoice={newInvoice}

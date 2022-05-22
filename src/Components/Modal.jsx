@@ -16,7 +16,7 @@ export const Modal = ({ send, sendRef }) => {
         <p>Are you sure you want to send?</p>
         <div className="modal-buttons">
           <Button text="Cancel" clname="button-cancel" />
-          <Link to="/">
+          <Link to="/invoice-react">
             <Button text="Submit" clname="button-send" event={() => send()} />
           </Link>
         </div>

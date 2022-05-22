@@ -119,7 +119,7 @@ export const Create = ({
           </button>
         </div>
         <BottomBar clname="create-bottom-bar">
-          <Link to="/">
+          <Link to="/invoice-react">
             <Button text="Discard" clname="create-discard-button" />
           </Link>
           <Button

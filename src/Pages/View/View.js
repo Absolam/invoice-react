@@ -33,13 +33,16 @@ export const View = ({ currentInvoice, listOfInvoices, setListOfInvoices }) => {
         <ViewInvoice currentInvoice={currentInvoice} />
       </div>
       <BottomBar>
-        <Link to="/edit">
+        <Link to="/invoice-react/edit">
           <Button text="Edit" clname="button-edit" />
         </Link>
-        <Link onClick={() => deleteInvoice(currentInvoice.id)} to="/">
+        <Link
+          onClick={() => deleteInvoice(currentInvoice.id)}
+          to="/invoice-react"
+        >
           <Button text="Delete" clname="button-delete" />
         </Link>
-        <Link onClick={() => markPaid(currentInvoice.id)} to="/">
+        <Link onClick={() => markPaid(currentInvoice.id)} to="/invoice-react">
           <Button text="Mark as Paid" clname="button-mark" />
         </Link>
       </BottomBar>

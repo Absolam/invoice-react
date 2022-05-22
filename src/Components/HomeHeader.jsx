@@ -20,7 +20,7 @@ export const HomeHeader = ({ listOfInvoices }) => {
           <h3>Filter</h3>
           <Arrow />
         </div>
-        <Link to="/create" className="home-header-button-container">
+        <Link to="/invoice-react/create" className="home-header-button-container">
           <img src={plus} alt="" className="icon-plus" />
           <p>New</p>
         </Link>
