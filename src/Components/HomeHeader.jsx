@@ -12,7 +12,7 @@ export const HomeHeader = ({ listOfInvoices }) => {
   return (
     <div className="home-header">
       <div className="home-header-status-container">
-        <h2>Invoices</h2>
+        <h2 onClick={() => console.log(listOfInvoices)}>Invoices</h2>
         <h3>{checkInvoices(listOfInvoices)}</h3>
       </div>
       <div className="home-header-filter-button-container">

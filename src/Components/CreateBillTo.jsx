@@ -20,7 +20,7 @@ export const CreateBillTo = ({ newInvoice, setNewInvoice }) => {
   return (
     <div className="bill-to">
       <h3>Bill To</h3>
-      <form className="bill-to-grid">
+      <div className="bill-to-grid">
         <div className="to-name">
           <label htmlFor="to-name">Client's Name</label>
           <input
@@ -87,7 +87,7 @@ export const CreateBillTo = ({ newInvoice, setNewInvoice }) => {
             onChange={changeAlt}
           />
         </div>
-      </form>
+      </div>
     </div>
   );
 };

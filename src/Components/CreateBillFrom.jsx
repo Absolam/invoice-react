@@ -4,11 +4,6 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice }) => {
 
     setNewInvoice((prevState) => ({
       ...prevState,
-      id: "12345",
-    }));
-
-    setNewInvoice((prevState) => ({
-      ...prevState,
       senderAddress: { ...prevState.senderAddress, [event.target.name]: value },
     }));
   }
@@ -16,14 +11,26 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice }) => {
   return (
     <div className="bill-from">
       <h3 onClick={() => console.log(newInvoice)}>Bill From</h3>
-      <form className="bill-from-grid">
+      <div className="bill-from-grid">
         <div className="from-street">
           <label htmlFor="from-street">Street Address</label>
-          <input type="text" id="from-street" name="street" onChange={change} />
+          <input
+            type="text"
+            id="from-street"
+            name="street"
+            onChange={change}
+            required
+          />
         </div>
         <div className="from-city">
           <label htmlFor="from-city">City</label>
-          <input type="text" id="from-city" name="city" onChange={change} />
+          <input
+            type="text"
+            id="from-city"
+            name="city"
+            onChange={change}
+            required
+          />
         </div>
         <div className="from-post-code">
           <label htmlFor="from-post-code">Post Code</label>
@@ -32,6 +39,7 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice }) => {
             id="from-post-code"
             name="postCode"
             onChange={change}
+            required
           />
         </div>
         <div className="from-country">
@@ -41,9 +49,10 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice }) => {
             id="from-country"
             name="country"
             onChange={change}
+            required
           />
         </div>
-      </form>
+      </div>
     </div>
   );
 };

@@ -20,11 +20,6 @@ export const CreateItemList = ({
     const value = event.target.value;
     const name = event.target.name;
 
-    // setItemValues((prevState) => [
-    //   ...prevState,
-    //   { [id]: { ...prevState[id], [name]: value, id: id } },
-    // ]);
-
     setItemValues((prevState) => {
       return prevState.map((item) => {
         if (item.id === id) {
@@ -32,13 +27,17 @@ export const CreateItemList = ({
         } else return item;
       });
     });
+
+    console.log(itemValues);
   }
 
   return (
     <div className="item-list">
-      <form className="item-list-grid">
+      <div className="item-list-grid">
         <div className="item-name">
-          <label htmlFor="">Item Name</label>
+          <label htmlFor="" onClick={() => console.log(itemValues)}>
+            Item Name
+          </label>
           <input type="text" name="name" onChange={change} />
         </div>
         <div className="item-qty">
@@ -57,7 +56,7 @@ export const CreateItemList = ({
           <span>{"\u00A0"}</span>
           <img src={trash} alt="delete" />
         </div>
-      </form>
+      </div>
     </div>
   );
 };

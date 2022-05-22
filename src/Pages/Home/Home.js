@@ -8,6 +8,10 @@ export const Home = ({ listOfInvoices, setCurrentInvoice }) => {
     document.title = "Invoice | Home";
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [listOfInvoices]);
+
   return (
     <div className="home">
       {listOfInvoices.length > 0 ? (
