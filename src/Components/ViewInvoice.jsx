@@ -59,7 +59,7 @@ export const ViewInvoice = ({ currentInvoice }) => {
                 name={item.name}
                 quantity={item.quantity}
                 price={item.price}
-                total={total}
+                total={item.quantity * item.price}
                 key={`${item.name}${item.price}`}
               />
             ))}

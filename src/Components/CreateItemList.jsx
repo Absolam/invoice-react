@@ -1,4 +1,4 @@
-import { React, useEffect } from "react";
+import { React, useEffect, useState, useRef } from "react";
 import trash from "../images/icon-delete.svg";
 
 export const CreateItemList = ({
@@ -7,7 +7,13 @@ export const CreateItemList = ({
   setNewInvoice,
   itemValues,
   setItemValues,
+  itemList,
 }) => {
+  const [total, setTotal] = useState(0);
+
+  const qty = useRef(null);
+  const price = useRef(null);
+
   useEffect(() => {
     setItemValues((prevState) => [...prevState, { id: id }]);
   }, []);
@@ -19,6 +25,10 @@ export const CreateItemList = ({
   function change(event) {
     const value = event.target.value;
     const name = event.target.name;
+
+    if (name === "price" || name === "quantity") {
+      setTotal(qty.current.value * price.current.value);
+    }
 
     setItemValues((prevState) => {
       return prevState.map((item) => {
@@ -42,15 +52,15 @@ export const CreateItemList = ({
         </div>
         <div className="item-qty">
           <label htmlFor="">Qty</label>
-          <input type="text" name="quantity" onChange={change} />
+          <input ref={qty} type="number" name="quantity" onChange={change} />
         </div>
         <div className="item-price">
           <label htmlFor="">Price</label>
-          <input type="text" name="price" onChange={change} />
+          <input ref={price} type="number" name="price" onChange={change} />
         </div>
         <div className="item-total">
           <label htmlFor="">Total</label>
-          <input type="text" name="total" onChange={change} />
+          <input readOnly value={total} name="total" onChange={change} />
         </div>
         <div className="item-delete" onClick={() => remove(id)}>
           <span>{"\u00A0"}</span>

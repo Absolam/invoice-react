@@ -23,6 +23,7 @@ export const Create = ({
 
   useEffect(() => {
     document.title = "Invoice | Create";
+    setModelOpen(false);
     setItemList([
       <CreateItemList
         key={randomNumber(10000)}
@@ -31,6 +32,7 @@ export const Create = ({
         setNewInvoice={setNewInvoice}
         itemValues={itemValues}
         setItemValues={setItemValues}
+        itemList={itemList}
       />,
     ]);
     setNewInvoice((prevState) => ({
@@ -85,10 +87,6 @@ export const Create = ({
   }
 
   function send() {
-    setNewInvoice((prevState) => ({
-      ...prevState,
-      items: itemValues,
-    }));
     setListOfInvoices((listOfInvoices) => [newInvoice, ...listOfInvoices]);
     console.log(itemValues);
     console.log(newInvoice);
@@ -96,6 +94,10 @@ export const Create = ({
 
   function triggerModal(e) {
     e.preventDefault();
+    setNewInvoice((prevState) => ({
+      ...prevState,
+      items: itemValues,
+    }));
     setModelOpen(true);
   }
 
@@ -114,7 +116,7 @@ export const Create = ({
         <div className="item-list-array">
           <h3 className="item-list-header">Item List</h3>
           {itemList.map((item) => item)}
-          <button className="add-item" onClick={addItemList}>
+          <button type="button" className="add-item" onClick={addItemList}>
             + Add New Item
           </button>
         </div>

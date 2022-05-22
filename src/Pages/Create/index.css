@@ -129,6 +129,11 @@
   flex-direction: column;
 }
 
+.to-date input {
+  display: flex;
+  padding: 0 1rem;
+}
+
 .to-terms {
   grid-area: terms;
   display: flex;
