@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { GoBack } from "../../Components/GoBack";
 import { CreateBillFrom } from "../../Components/CreateBillFrom";
 import { CreateBillTo } from "../../Components/CreateBillTo";
@@ -21,9 +21,13 @@ export const Create = ({
 
   const [modelOpen, setModelOpen] = useState(false);
 
+  const [finalTotal, setFinalTotal] = useState(0);
+
   useEffect(() => {
     document.title = "Invoice | Create";
     setModelOpen(false);
+    setFinalTotal(0);
+    setItemValues([]);
     setItemList([
       <CreateItemList
         key={randomNumber(10000)}
@@ -47,6 +51,15 @@ export const Create = ({
       setNewInvoice("");
     };
   }, []);
+
+  // useEffect(() => {
+  //   let a;
+  //   let length = itemValues.length - 1;
+  //   for (let i = 0; i < length; i++) {
+  //     setFinalTotal(finalTotal + itemValues[i].total);
+  //     console.log(finalTotal);
+  //   }
+  // });
 
   function makeId() {
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -88,17 +101,29 @@ export const Create = ({
 
   function send() {
     setListOfInvoices((listOfInvoices) => [newInvoice, ...listOfInvoices]);
+    console.log(finalTotal);
     console.log(itemValues);
     console.log(newInvoice);
   }
 
   function triggerModal(e) {
     e.preventDefault();
+
     setNewInvoice((prevState) => ({
       ...prevState,
       items: itemValues,
+      total: finalTotal,
     }));
     setModelOpen(true);
+  }
+
+  function loopTotal() {
+    let grabVaules = itemValues.map((item) => item.total);
+    let addValues = grabVaules.reduce(
+      (partialSum, grabVaules) => partialSum + grabVaules,
+      0
+    );
+    setFinalTotal(addValues);
   }
 
   function randomNumber(max) {
@@ -128,6 +153,7 @@ export const Create = ({
             text="Save & Send"
             clname="create-save-button"
             type="submit"
+            event={loopTotal}
           />
         </BottomBar>
       </div>

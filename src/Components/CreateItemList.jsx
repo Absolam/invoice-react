@@ -8,6 +8,8 @@ export const CreateItemList = ({
   itemValues,
   setItemValues,
   itemList,
+  setFinalTotal,
+  finalTotal,
 }) => {
   const [total, setTotal] = useState(0);
 
@@ -33,7 +35,11 @@ export const CreateItemList = ({
     setItemValues((prevState) => {
       return prevState.map((item) => {
         if (item.id === id) {
-          return { ...item, [name]: value };
+          return {
+            ...item,
+            [name]: value,
+            total: qty.current.value * price.current.value,
+          };
         } else return item;
       });
     });
