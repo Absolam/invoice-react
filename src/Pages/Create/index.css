@@ -3,12 +3,12 @@
   flex-direction: column;
   gap: 3rem;
   padding: 2rem;
-  background-color: white;
+  background-color: var(--white-bg);
   position: relative;
 }
 
 .bill-from h3 {
-  color: #7c5dfa;
+  color: var(--primary-purple);
   font-size: 14px;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .bill-to h3 {
-  color: #7c5dfa;
+  color: var(--primary-purple);
   font-size: 14px;
 }
 
@@ -131,7 +131,7 @@
 
 .to-date input {
   display: flex;
-  padding: 0 0.75rem;
+  padding: 1rem 0.75rem;
 }
 
 .to-terms {
@@ -143,7 +143,7 @@
 .to-terms > button {
   padding: 0.75rem;
   border: 1px solid #dfe3fa;
-  background-color: white;
+  background-color: var(--white-bg);
   margin-top: 0.75rem;
   border-radius: 4px;
   cursor: pointer;
@@ -151,22 +151,24 @@
 }
 
 .to-terms > button:hover {
-  border: 1px solid #7c5dfa;
+  border: 1px solid var(--primary-purple);
 }
 
 .to-terms-list {
   margin-top: 1rem;
-  background-color: white;
+  background-color: var(--white-bg);
   display: flex;
   flex-direction: column;
+  box-shadow: 0 10px 20px #48549f42;
+  border-radius: 4px;
   /* display: none; */
 }
 
 .to-terms-list button {
   padding: 0.75rem;
   border-top: 1px solid #dfe3fa;
-  background-color: white;
-  box-shadow: 0 10px 20px #48549f42;
+  background-color: var(--white-bg);
+  /* box-shadow: 0 10px 20px #48549f42; */
   cursor: pointer;
   text-align: start;
 }
@@ -278,8 +280,8 @@
 }
 
 .create-save-button {
-  background-color: #7c5dfa;
-  color: white;
+  background-color: var(--primary-purple);
+  color: var(--white-bg);
   padding: 1rem 1.5rem;
   border-radius: 24px;
 }

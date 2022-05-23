@@ -10,8 +10,8 @@ function App() {
   const [listOfInvoices, setListOfInvoices] = useState([
     {
       id: "RT3080",
-      createdAt: "2021-08-18",
-      paymentDue: "2021-08-19",
+      createdAt: "8/18/2021",
+      paymentDue: "8/19/2021",
       description: "Re-branding",
       paymentTerms: 1,
       clientName: "Jensen Huang",
@@ -41,8 +41,8 @@ function App() {
     },
     {
       id: "XM9141",
-      createdAt: "2021-08-21",
-      paymentDue: "2021-09-20",
+      createdAt: "8/21/2021",
+      paymentDue: "9/20/2021",
       description: "Graphic Design",
       paymentTerms: 30,
       clientName: "Alex Grim",
@@ -78,13 +78,13 @@ function App() {
     },
     {
       id: "RG0314",
-      createdAt: "2021-09-24",
-      paymentDue: "2021-10-01",
+      createdAt: "9/24/2021",
+      paymentDue: "10/1/2021",
       description: "Website Redesign",
       paymentTerms: 7,
       clientName: "John Morrison",
       clientEmail: "jm@myco.com",
-      status: "Draft",
+      status: "Paid",
       senderAddress: {
         street: "19 Union Terrace",
         city: "London",
@@ -109,8 +109,8 @@ function App() {
     },
     {
       id: "RT2080",
-      createdAt: "2021-10-11",
-      paymentDue: "2021-10-12",
+      createdAt: "10/11/2021",
+      paymentDue: "10/12/2021",
       description: "Logo Concept",
       paymentTerms: 1,
       clientName: "Alysa Werner",
@@ -140,8 +140,8 @@ function App() {
     },
     {
       id: "AA1449",
-      createdAt: "2021-10-7",
-      paymentDue: "2021-10-14",
+      createdAt: "10/7/2021",
+      paymentDue: "10/14/2021",
       description: "Re-branding",
       paymentTerms: 7,
       clientName: "Mellisa Clarke",
@@ -177,8 +177,8 @@ function App() {
     },
     {
       id: "TY9141",
-      createdAt: "2021-10-01",
-      paymentDue: "2021-10-31",
+      createdAt: "10/1/2021",
+      paymentDue: "10/31/2021",
       description: "Landing Page Design",
       paymentTerms: 30,
       clientName: "Thomas Wayne",
@@ -208,13 +208,13 @@ function App() {
     },
     {
       id: "FV2353",
-      createdAt: "2021-11-05",
-      paymentDue: "2021-11-12",
+      createdAt: "11/5/2021",
+      paymentDue: "11/12/2021",
       description: "Logo Re-design",
       paymentTerms: 7,
       clientName: "Anita Wainwright",
       clientEmail: "",
-      status: "Draft",
+      status: "Paid",
       senderAddress: {
         street: "19 Union Terrace",
         city: "London",
@@ -241,8 +241,8 @@ function App() {
 
   const [currentInvoice, setCurrentInvoice] = useState({
     id: "RT3080",
-    createdAt: "2021-08-18",
-    paymentDue: "2021-08-19",
+    createdAt: "8/18/2021",
+    paymentDue: "8/19/2021",
     description: "Re-branding",
     paymentTerms: 1,
     clientName: "Jensen Huang",
@@ -273,9 +273,11 @@ function App() {
 
   const [newInvoice, setNewInvoice] = useState({});
 
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
     <Router>
-      <Header />
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
         <Route
           path="/invoice-react"
@@ -284,6 +286,7 @@ function App() {
               listOfInvoices={listOfInvoices}
               setListOfInvoices={setListOfInvoices}
               setCurrentInvoice={setCurrentInvoice}
+              darkMode={darkMode}
             />
           }
         />
@@ -294,6 +297,7 @@ function App() {
               currentInvoice={currentInvoice}
               listOfInvoices={listOfInvoices}
               setListOfInvoices={setListOfInvoices}
+              darkMode={darkMode}
             />
           }
         />
@@ -306,6 +310,7 @@ function App() {
               setNewInvoice={setNewInvoice}
               listOfInvoices={listOfInvoices}
               setListOfInvoices={setListOfInvoices}
+              darkMode={darkMode}
             />
           }
         />

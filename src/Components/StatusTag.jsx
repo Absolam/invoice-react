@@ -1,4 +1,6 @@
-export const StatusTag = ({ status }) => {
+export const StatusTag = ({ status, darkMode }) => {
+  let dark = darkMode ? "#1E2139" : "";
+
   function statusClass(invoice) {
     if (invoice === "Paid") {
       return "invoice-status--paid";

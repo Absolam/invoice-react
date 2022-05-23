@@ -8,8 +8,19 @@ export const CreateBillTo = ({
   setDate,
   defaultTerms,
   setDefaultTerms,
+  darkMode,
 }) => {
   const [termsListActive, setTermsListActive] = useState(false);
+
+  let dark = darkMode
+    ? {
+        darkBg: "#1E2139",
+        blackBg: "#141625",
+        txtOffWhite: "#DFE3FA",
+        txtWhite: "#fff",
+        border: "1px solid #252945",
+      }
+    : "";
 
   useEffect(() => {
     const d = new Date();
@@ -28,6 +39,7 @@ export const CreateBillTo = ({
       ...prevState,
       PaymentTerms: value,
     }));
+    setTermsListActive(false);
   }
 
   function change(event) {
@@ -59,6 +71,11 @@ export const CreateBillTo = ({
             id="to-name"
             name="clientName"
             onChange={changeAlt}
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
           />
         </div>
         <div className="to-email">
@@ -68,15 +85,40 @@ export const CreateBillTo = ({
             id="to-email"
             name="clientEmail"
             onChange={changeAlt}
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
           />
         </div>
         <div className="to-street">
           <label htmlFor="to-street">Street Address</label>
-          <input type="text" id="to-street" name="street" onChange={change} />
+          <input
+            type="text"
+            id="to-street"
+            name="street"
+            onChange={change}
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
+          />
         </div>
         <div className="to-city">
           <label htmlFor="to-city">City</label>
-          <input type="text" id="to-city" name="city" onChange={change} />
+          <input
+            type="text"
+            id="to-city"
+            name="city"
+            onChange={change}
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
+          />
         </div>
         <div className="to-post-code">
           <label htmlFor="to-post-code">Post Code</label>
@@ -85,11 +127,26 @@ export const CreateBillTo = ({
             id="to-post-code"
             name="postCode"
             onChange={change}
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
           />
         </div>
         <div className="to-country">
           <label htmlFor="to-country">Country</label>
-          <input type="text" id="to-country" name="country" onChange={change} />
+          <input
+            type="text"
+            id="to-country"
+            name="country"
+            onChange={change}
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
+          />
         </div>
         <div className="to-date">
           <label htmlFor="to-date">Invoice Date</label>
@@ -100,6 +157,11 @@ export const CreateBillTo = ({
             name="createdAt"
             value={date}
             onChange={changeAlt}
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
           />
         </div>
         <div className="to-terms">
@@ -109,13 +171,33 @@ export const CreateBillTo = ({
             action={toggle}
             actionAlt={changeAlt}
             name="paymentTerms"
+            darkMode={darkMode}
           />
           {termsListActive && (
-            <div className="to-terms-list">
-              <PaymentTerms date="1 day" action={changeDefaultTerms} />
-              <PaymentTerms date="7 days" action={changeDefaultTerms} />
-              <PaymentTerms date="14 days" action={changeDefaultTerms} />
-              <PaymentTerms date="30 days" action={changeDefaultTerms} />
+            <div
+              className="to-terms-list"
+              style={{ backgroundColor: dark.darkBg }}
+            >
+              <PaymentTerms
+                date="1 day"
+                action={changeDefaultTerms}
+                darkMode={darkMode}
+              />
+              <PaymentTerms
+                date="7 days"
+                action={changeDefaultTerms}
+                darkMode={darkMode}
+              />
+              <PaymentTerms
+                date="14 days"
+                action={changeDefaultTerms}
+                darkMode={darkMode}
+              />
+              <PaymentTerms
+                date="30 days"
+                action={changeDefaultTerms}
+                darkMode={darkMode}
+              />
             </div>
           )}
         </div>
@@ -126,6 +208,11 @@ export const CreateBillTo = ({
             id="to-desc"
             name="description"
             onChange={changeAlt}
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
           />
         </div>
       </div>

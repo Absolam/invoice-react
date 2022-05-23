@@ -14,6 +14,7 @@ export const Create = ({
   setNewInvoice,
   listOfInvoices,
   setListOfInvoices,
+  darkMode,
 }) => {
   const [itemList, setItemList] = useState([]);
 
@@ -27,11 +28,21 @@ export const Create = ({
 
   const [date, setDate] = useState("");
 
+  let dark = darkMode
+    ? {
+        darkBg: "#141625",
+        txtOffWhite: "#DFE3FA",
+        txtWhite: "#fff",
+        darkBgAlt: "#1E2139",
+      }
+    : "";
+
   useEffect(() => {
     document.title = "Invoice | Create";
     setModelOpen(false);
     setFinalTotal(0);
     setItemValues([]);
+    setDefaultTerms("30 days");
     setItemList([
       <CreateItemList
         key={randomNumber(10000)}
@@ -41,6 +52,7 @@ export const Create = ({
         itemValues={itemValues}
         setItemValues={setItemValues}
         itemList={itemList}
+        darkMode={darkMode}
       />,
     ]);
     setNewInvoice((prevState) => ({
@@ -81,6 +93,7 @@ export const Create = ({
         removeItemList={removeItemList}
         itemValues={itemValues}
         setItemValues={setItemValues}
+        darkMode={darkMode}
       />,
     ]);
   }
@@ -174,11 +187,26 @@ export const Create = ({
 
   return (
     <form onSubmit={triggerModal}>
-      <div className="create">
-        {modelOpen && <Modal send={send} />}
-        <GoBack />
-        <h2 onClick={() => console.log(itemValues)}>New Invoice</h2>
-        <CreateBillFrom newInvoice={newInvoice} setNewInvoice={setNewInvoice} />
+      <div className="create" style={{ backgroundColor: dark.darkBg }}>
+        {modelOpen && (
+          <Modal
+            send={send}
+            header="Confirm Send"
+            text="Are you sure you want to send?"
+          >
+            <Button text="Cancel" clname="button-cancel" />
+            <Link to="/invoice-react">
+              <Button text="Submit" clname="button-send" event={() => send()} />
+            </Link>
+          </Modal>
+        )}
+        <GoBack darkMode={darkMode} />
+        <h2 style={{ color: dark.txtWhite }}>New Invoice</h2>
+        <CreateBillFrom
+          newInvoice={newInvoice}
+          setNewInvoice={setNewInvoice}
+          darkMode={darkMode}
+        />
         <CreateBillTo
           newInvoice={newInvoice}
           setNewInvoice={setNewInvoice}
@@ -186,17 +214,27 @@ export const Create = ({
           setDate={setDate}
           defaultTerms={defaultTerms}
           setDefaultTerms={setDefaultTerms}
+          darkMode={darkMode}
         />
         <div className="item-list-array">
           <h3 className="item-list-header">Item List</h3>
           {itemList.map((item) => item)}
-          <button type="button" className="add-item" onClick={addItemList}>
+          <button
+            type="button"
+            className="add-item"
+            onClick={addItemList}
+            style={{ backgroundColor: dark.darkBgAlt }}
+          >
             + Add New Item
           </button>
         </div>
-        <BottomBar clname="create-bottom-bar">
+        <BottomBar clname="create-bottom-bar" darkMode={darkMode}>
           <Link to="/invoice-react">
-            <Button text="Discard" clname="create-discard-button" />
+            <Button
+              text="Discard"
+              clname="create-discard-button"
+              darkMode={darkMode}
+            />
           </Link>
           <Button
             text="Save & Send"

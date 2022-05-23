@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { StatusTag } from "./StatusTag";
 
-export const HomeList = ({ listOfInvoices, setCurrentInvoice }) => {
+export const HomeList = ({ listOfInvoices, setCurrentInvoice, darkMode }) => {
   function getInvoice(id) {
     const selectedInvoice = listOfInvoices.find((invoice) => invoice.id === id);
     setCurrentInvoice(selectedInvoice);
   }
+
+  let dark = darkMode ? { bgDark: "#1E2139", txtWhite: "#fff" } : "";
 
   return (
     <div className="home-list">
@@ -15,7 +17,10 @@ export const HomeList = ({ listOfInvoices, setCurrentInvoice }) => {
           key={invoice.id}
           onClick={() => getInvoice(invoice.id)}
         >
-          <div className="home-list-single">
+          <div
+            className="home-list-single"
+            style={{ backgroundColor: dark.bgDark, color: dark.txtWhite }}
+          >
             <h4>
               <span>#</span>
               {invoice.id}

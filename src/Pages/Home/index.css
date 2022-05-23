@@ -40,7 +40,7 @@
 }
 
 .home-header-button-container {
-  background-color: #7c5dfa;
+  background-color: var(--primary-purple);
   padding: 0.5rem 1rem 0.5rem 0.4rem;
   border-radius: 24px;
 
@@ -52,7 +52,7 @@
 }
 
 .home-header-button-container p {
-  color: white;
+  color: var(--white-bg);
 
   display: flex;
   align-items: center;
@@ -61,7 +61,7 @@
 }
 
 .icon-plus {
-  background-color: white;
+  background-color: var(--white-bg);
   border-radius: 50%;
   padding: 0.5rem;
 
@@ -113,7 +113,7 @@
 }
 
 .home-list-single {
-  background-color: white;
+  background-color: var(--white-bg);
   padding: 1.5rem;
   border-radius: 8px;
   font-size: 15px;
@@ -162,7 +162,7 @@
   width: 90%;
 }
 .invoice-status-container--draft {
-  background-color: #373b531c;
+  background-color: var(--primary-dark-purple) 1c;
   display: flex;
   justify-content: center;
   justify-self: end;
@@ -180,7 +180,7 @@
 }
 
 .invoice-status--draft p {
-  background-color: #373b53;
+  background-color: var(--primary-dark-purple);
 }
 
 .invoice-status--paid {
@@ -203,7 +203,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #373b53;
+  color: var(--primary-dark-purple);
   font-weight: 700;
 }
 

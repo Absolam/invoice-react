@@ -1,25 +1,32 @@
 import { Overcast } from "./Overcast";
-import { Button } from "./Buttons";
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
-export const Modal = ({ send, sendRef }) => {
+export const Modal = ({ send, sendRef, header, text, children, darkMode }) => {
   useEffect(() => {
     window.scrollTo(0, 700);
   });
 
+  let dark = darkMode
+    ? {
+        darkBg: "#141625",
+        txtOffWhite: "#DFE3FA",
+        txtWhite: "#fff",
+        txtLight: "#888EB0",
+        darkBgAlt: "#1E2139",
+      }
+    : "";
+
   return (
     <>
       <Overcast />
-      <div className="modal" ref={sendRef}>
-        <h4>Confirm Send</h4>
-        <p>Are you sure you want to send?</p>
-        <div className="modal-buttons">
-          <Button text="Cancel" clname="button-cancel" />
-          <Link to="/invoice-react">
-            <Button text="Submit" clname="button-send" event={() => send()} />
-          </Link>
-        </div>
+      <div
+        className="modal"
+        ref={sendRef}
+        style={{ backgroundColor: dark.darkBgAlt }}
+      >
+        <h4 style={{ color: dark.txtWhite }}>{header}</h4>
+        <p style={{ color: dark.txtLight }}>{text}</p>
+        <div className="modal-buttons">{children}</div>
       </div>
     </>
   );

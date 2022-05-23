@@ -4,15 +4,21 @@ import trash from "../images/icon-delete.svg";
 export const CreateItemList = ({
   id,
   removeItemList,
-  setNewInvoice,
   itemValues,
   setItemValues,
-  itemList,
-  setFinalTotal,
-  finalTotal,
+  darkMode,
 }) => {
-  const [total, setTotal] = useState(0);
+  let dark = darkMode
+    ? {
+        darkBg: "#1E2139",
+        blackBg: "#141625",
+        txtOffWhite: "#DFE3FA",
+        txtWhite: "#fff",
+        border: "1px solid #252945",
+      }
+    : "";
 
+  const [total, setTotal] = useState(0);
   const qty = useRef(null);
   const price = useRef(null);
 
@@ -43,30 +49,69 @@ export const CreateItemList = ({
         } else return item;
       });
     });
-
-    console.log(itemValues);
   }
 
   return (
     <div className="item-list">
       <div className="item-list-grid">
         <div className="item-name">
-          <label htmlFor="" onClick={() => console.log(itemValues)}>
-            Item Name
-          </label>
-          <input type="text" name="name" onChange={change} />
+          <label htmlFor="item-name">Item Name</label>
+          <input
+            type="text"
+            name="name"
+            id="item-name"
+            onChange={change}
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
+          />
         </div>
         <div className="item-qty">
-          <label htmlFor="">Qty</label>
-          <input ref={qty} type="number" name="quantity" onChange={change} />
+          <label htmlFor="item-qty">Qty</label>
+          <input
+            ref={qty}
+            type="number"
+            name="quantity"
+            id="item-qty"
+            onChange={change}
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
+          />
         </div>
         <div className="item-price">
-          <label htmlFor="">Price</label>
-          <input ref={price} type="number" name="price" onChange={change} />
+          <label htmlFor="item-price">Price</label>
+          <input
+            ref={price}
+            type="number"
+            name="price"
+            id="item-price"
+            onChange={change}
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
+          />
         </div>
         <div className="item-total">
-          <label htmlFor="">Total</label>
-          <input readOnly value={total} name="total" onChange={change} />
+          <label htmlFor="item-total">Total</label>
+          <input
+            readOnly
+            value={total}
+            name="total"
+            id="item-total"
+            onChange={change}
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
+          />
         </div>
         <div className="item-delete" onClick={() => remove(id)}>
           <span>{"\u00A0"}</span>

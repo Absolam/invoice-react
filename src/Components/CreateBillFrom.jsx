@@ -1,4 +1,14 @@
-export const CreateBillFrom = ({ newInvoice, setNewInvoice }) => {
+export const CreateBillFrom = ({ newInvoice, setNewInvoice, darkMode }) => {
+  let dark = darkMode
+    ? {
+        darkBg: "#1E2139",
+        blackBg: "#141625",
+        txtOffWhite: "#DFE3FA",
+        txtWhite: "#fff",
+        border: "1px solid #252945",
+      }
+    : "";
+
   function change(event) {
     const value = event.target.value;
 
@@ -20,6 +30,11 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice }) => {
             name="street"
             onChange={change}
             required
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
           />
         </div>
         <div className="from-city">
@@ -30,6 +45,11 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice }) => {
             name="city"
             onChange={change}
             required
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
           />
         </div>
         <div className="from-post-code">
@@ -40,6 +60,11 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice }) => {
             name="postCode"
             onChange={change}
             required
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
           />
         </div>
         <div className="from-country">
@@ -50,6 +75,11 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice }) => {
             name="country"
             onChange={change}
             required
+            style={{
+              backgroundColor: dark.darkBg,
+              border: dark.border,
+              color: dark.txtWhite,
+            }}
           />
         </div>
       </div>

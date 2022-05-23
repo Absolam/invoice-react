@@ -3,7 +3,7 @@ import { HomeFull } from "../../Components/HomeFull";
 import { useEffect } from "react";
 import "../Home/index.css";
 
-export const Home = ({ listOfInvoices, setCurrentInvoice }) => {
+export const Home = ({ listOfInvoices, setCurrentInvoice, darkMode }) => {
   useEffect(() => {
     document.title = "Invoice | Home";
   }, []);
@@ -18,6 +18,7 @@ export const Home = ({ listOfInvoices, setCurrentInvoice }) => {
         <HomeFull
           listOfInvoices={listOfInvoices}
           setCurrentInvoice={setCurrentInvoice}
+          darkMode={darkMode}
         />
       ) : (
         <HomeEmpty listOfInvoices={listOfInvoices} />

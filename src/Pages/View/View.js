@@ -5,9 +5,17 @@ import { BottomBar } from "../../Components/BottomBar";
 import { Button } from "../../Components/Buttons";
 import "../View/index.css";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Modal } from "../../Components/Modal";
 
-export const View = ({ currentInvoice, listOfInvoices, setListOfInvoices }) => {
+export const View = ({
+  currentInvoice,
+  listOfInvoices,
+  setListOfInvoices,
+  darkMode,
+}) => {
+  const [deleteModal, setDeleteModal] = useState(false);
+
   useEffect(() => {
     document.title = "Invoice | View";
   }, []);
@@ -26,22 +34,49 @@ export const View = ({ currentInvoice, listOfInvoices, setListOfInvoices }) => {
   }
 
   return (
-    <div>
-      <div className="view">
-        <GoBack />
-        <ViewStatus currentInvoice={currentInvoice} />
-        <ViewInvoice currentInvoice={currentInvoice} />
-      </div>
-      <BottomBar>
-        <Link to="/invoice-react/edit">
-          <Button text="Edit" clname="button-edit" />
-        </Link>
-        <Link
-          onClick={() => deleteInvoice(currentInvoice.id)}
-          to="/invoice-react"
+    <div className="view-container">
+      {deleteModal && (
+        <Modal
+          darkMode={darkMode}
+          header="Confirm Deletion"
+          text={`Are you sure you want to delete invoice #${currentInvoice.id}? This action cannot be undone.`}
         >
-          <Button text="Delete" clname="button-delete" />
-        </Link>
+          <Button
+            text="Cancel"
+            clname="button-cancel"
+            event={() => setDeleteModal(false)}
+            darkMode={darkMode}
+          />
+          <Link to="/invoice-react">
+            <Button
+              text="Delete"
+              clname="button-delete"
+              event={() => deleteInvoice(currentInvoice.id)}
+            />
+          </Link>
+        </Modal>
+      )}
+
+      <div className="view">
+        <GoBack darkMode={darkMode} />
+        <ViewStatus currentInvoice={currentInvoice} darkMode={darkMode} />
+        <ViewInvoice
+          currentInvoice={currentInvoice}
+          deleteModal={deleteModal}
+          setDeleteModal={setDeleteModal}
+          deleteInvoice={deleteInvoice}
+          darkMode={darkMode}
+        />
+      </div>
+      <BottomBar darkMode={darkMode}>
+        {/* <Link to="/invoice-react/edit">
+          <Button text="Edit" clname="button-edit" />
+        </Link> */}
+        <Button
+          text="Delete"
+          clname="button-delete"
+          event={() => setDeleteModal(true)}
+        />
         <Link onClick={() => markPaid(currentInvoice.id)} to="/invoice-react">
           <Button text="Mark as Paid" clname="button-mark" />
         </Link>

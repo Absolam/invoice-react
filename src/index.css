@@ -5,6 +5,15 @@
   font-display: fallback;
 }
 
+:root {
+  --black: rgb(0, 0, 0);
+  --white-bg: rgb(255, 255, 255);
+  --primary-purple: rgb(123, 92, 250);
+  --secondary-light-purple: rgb(146, 119, 255);
+  --primary-dark-purple: rgb(55, 59, 83);
+  --light-bg: rgb(248, 248, 251);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -20,22 +29,22 @@ html {
 
 a:link {
   text-decoration: none;
-  color: black;
+  color: var(--black);
 }
 
 a:visited {
   text-decoration: none;
-  color: black;
+  color: var(--black);
 }
 
 body {
   height: 100vh;
   width: 100vw;
-  background-color: #f8f8fb;
+  background-color: var(--light-bg);
 }
 
 .header {
-  background-color: #373b53;
+  background-color: var(--primary-dark-purple);
   width: 100vw;
   height: 72px;
 
@@ -44,7 +53,7 @@ body {
 }
 
 .header-logo-container {
-  background-color: #7c5dfa;
+  background-color: var(--primary-purple);
   width: 72px;
   height: 72px;
   border-radius: 0 20px 20px 0;
@@ -55,7 +64,7 @@ body {
 .header-logo-container span {
   width: 72px;
   height: 36px;
-  background-color: #9277ff;
+  background-color: var(--secondary-light-purple);
   border-radius: 20px 0 20px 0;
 
   position: absolute;
@@ -109,7 +118,7 @@ body {
 }
 
 .bottom-bar {
-  background-color: white;
+  background-color: var(--white-bg);
   display: flex;
   justify-content: space-evenly;
   padding: 1rem 1rem;
@@ -123,14 +132,14 @@ body {
 }
 .button-delete {
   background-color: #ec5757;
-  color: white;
+  color: var(--white-bg);
   padding: 1rem 1.5rem;
   border-radius: 24px;
 }
 
 .button-mark {
-  background-color: #7c5dfa;
-  color: white;
+  background-color: var(--primary-purple);
+  color: var(--white-bg);
   padding: 1rem 1.5rem;
   border-radius: 24px;
 }
@@ -151,7 +160,7 @@ body {
   transform: translate(-50%, -50%);
   width: 80%;
   height: auto;
-  background-color: white;
+  background-color: var(--white-bg);
   border-radius: 8px;
 
   display: flex;
@@ -173,15 +182,15 @@ body {
 }
 
 .button-cancel {
-  background-color: #f8f8fb;
+  background-color: var(--light-bg);
   padding: 0.5rem 1rem;
   color: #7e88c3;
   border-radius: 24px;
 }
 
 .button-send {
-  background-color: #7c5dfa;
+  background-color: var(--primary-purple);
   padding: 0.8rem 1.5rem;
-  color: white;
+  color: var(--white-bg);
   border-radius: 24px;
 }
