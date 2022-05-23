@@ -23,7 +23,7 @@ export const HomeList = ({ listOfInvoices, setCurrentInvoice }) => {
             <p className="invoice-name">{invoice.clientName}</p>
             <div className="invoice-date-payment">
               <p className="invoice-date">Due {invoice.paymentDue}</p>
-              <p className="invoice-total">${invoice.total}</p>
+              <p className="invoice-total">${invoice.total.toFixed(2)}</p>
             </div>
             <StatusTag status={invoice.status} />
           </div>

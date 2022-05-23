@@ -23,6 +23,10 @@ export const Create = ({
 
   const [finalTotal, setFinalTotal] = useState(0);
 
+  const [defaultTerms, setDefaultTerms] = useState("30 days");
+
+  const [date, setDate] = useState("");
+
   useEffect(() => {
     document.title = "Invoice | Create";
     setModelOpen(false);
@@ -51,15 +55,6 @@ export const Create = ({
       setNewInvoice("");
     };
   }, []);
-
-  // useEffect(() => {
-  //   let a;
-  //   let length = itemValues.length - 1;
-  //   for (let i = 0; i < length; i++) {
-  //     setFinalTotal(finalTotal + itemValues[i].total);
-  //     console.log(finalTotal);
-  //   }
-  // });
 
   function makeId() {
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -113,8 +108,55 @@ export const Create = ({
       ...prevState,
       items: itemValues,
       total: finalTotal,
+      paymentDue: calculateDueDate(),
+      createdAt: calculateCreated(),
     }));
     setModelOpen(true);
+  }
+
+  function calculateCreated() {
+    const d = new Date();
+    const [month, day, year] = [d.getMonth(), d.getDate(), d.getFullYear()];
+    return `${month + 1}/${day}/${year}`;
+  }
+
+  function calculateDueDate() {
+    const dateAdd = new Date();
+    let dateDue;
+
+    if (defaultTerms === "1 day") {
+      dateAdd.setDate(dateAdd.getDate() + 1);
+      const [month, day, year] = [
+        dateAdd.getMonth(),
+        dateAdd.getDate(),
+        dateAdd.getFullYear(),
+      ];
+      return (dateDue = `${month + 1}/${day}/${year}`);
+    } else if (defaultTerms === "7 days") {
+      dateAdd.setDate(dateAdd.getDate() + 7);
+      const [month, day, year] = [
+        dateAdd.getMonth(),
+        dateAdd.getDate(),
+        dateAdd.getFullYear(),
+      ];
+      return (dateDue = `${month + 1}/${day}/${year}`);
+    } else if (defaultTerms === "14 days") {
+      dateAdd.setDate(dateAdd.getDate() + 14);
+      const [month, day, year] = [
+        dateAdd.getMonth(),
+        dateAdd.getDate(),
+        dateAdd.getFullYear(),
+      ];
+      return (dateDue = `${month + 1}/${day}/${year}`);
+    } else if (defaultTerms === "30 days") {
+      dateAdd.setDate(dateAdd.getDate() + 30);
+      const [month, day, year] = [
+        dateAdd.getMonth(),
+        dateAdd.getDate(),
+        dateAdd.getFullYear(),
+      ];
+      return (dateDue = `${month + 1}/${day}/${year}`);
+    }
   }
 
   function loopTotal() {
@@ -137,7 +179,14 @@ export const Create = ({
         <GoBack />
         <h2 onClick={() => console.log(itemValues)}>New Invoice</h2>
         <CreateBillFrom newInvoice={newInvoice} setNewInvoice={setNewInvoice} />
-        <CreateBillTo newInvoice={newInvoice} setNewInvoice={setNewInvoice} />
+        <CreateBillTo
+          newInvoice={newInvoice}
+          setNewInvoice={setNewInvoice}
+          date={date}
+          setDate={setDate}
+          defaultTerms={defaultTerms}
+          setDefaultTerms={setDefaultTerms}
+        />
         <div className="item-list-array">
           <h3 className="item-list-header">Item List</h3>
           {itemList.map((item) => item)}

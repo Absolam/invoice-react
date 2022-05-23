@@ -1,4 +1,5 @@
-export const InvoiceItem = ({ name, quantity, price, total }) => {
+export const InvoiceItem = ({ name, quantity, price }) => {
+  let total = quantity * price;
   return (
     <div className="invoice-item">
       <div>
@@ -10,7 +11,7 @@ export const InvoiceItem = ({ name, quantity, price, total }) => {
         </div>
       </div>
       <p>
-        <span>${quantity * price}</span>
+        <span>${total.toFixed(2)}</span>
       </p>
     </div>
   );

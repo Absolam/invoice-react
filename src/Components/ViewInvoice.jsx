@@ -66,7 +66,7 @@ export const ViewInvoice = ({ currentInvoice }) => {
         </div>
         <div className="invoice-item-grand-total">
           <p>Grand Total</p>
-          <p>{total && <span>${total}</span>}</p>
+          <p>{total && <span>${total.toFixed(2)}</span>}</p>
         </div>
       </div>
     </div>

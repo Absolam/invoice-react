@@ -131,13 +131,53 @@
 
 .to-date input {
   display: flex;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
 }
 
 .to-terms {
   grid-area: terms;
   display: flex;
   flex-direction: column;
+}
+
+.to-terms > button {
+  padding: 0.75rem;
+  border: 1px solid #dfe3fa;
+  background-color: white;
+  margin-top: 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: start;
+}
+
+.to-terms > button:hover {
+  border: 1px solid #7c5dfa;
+}
+
+.to-terms-list {
+  margin-top: 1rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* display: none; */
+}
+
+.to-terms-list button {
+  padding: 0.75rem;
+  border-top: 1px solid #dfe3fa;
+  background-color: white;
+  box-shadow: 0 10px 20px #48549f42;
+  cursor: pointer;
+  text-align: start;
+}
+
+.to-terms-list button:first-child {
+  border-top: none;
+  border-radius: 4px 4px 0 0;
+}
+
+.to-terms-list button:last-child {
+  border-radius: 0 0 4px 4px;
 }
 
 .to-desc {
@@ -242,4 +282,8 @@
   color: white;
   padding: 1rem 1.5rem;
   border-radius: 24px;
+}
+
+.off {
+  display: none;
 }

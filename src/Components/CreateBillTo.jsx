@@ -1,4 +1,35 @@
-export const CreateBillTo = ({ newInvoice, setNewInvoice }) => {
+import { useState, useRef, useEffect } from "react";
+import { PaymentTerms } from "./PaymentTerms";
+
+export const CreateBillTo = ({
+  newInvoice,
+  setNewInvoice,
+  date,
+  setDate,
+  defaultTerms,
+  setDefaultTerms,
+}) => {
+  const [termsListActive, setTermsListActive] = useState(false);
+
+  useEffect(() => {
+    const d = new Date();
+    const [month, day, year] = [d.getMonth(), d.getDate(), d.getFullYear()];
+    setDate(`${month + 1}/${day}/${year}`);
+  }, []);
+
+  function toggle() {
+    setTermsListActive(!termsListActive);
+  }
+
+  function changeDefaultTerms(e) {
+    const value = e.target.textContent;
+    setDefaultTerms(value);
+    setNewInvoice((prevState) => ({
+      ...prevState,
+      PaymentTerms: value,
+    }));
+  }
+
   function change(event) {
     const value = event.target.value;
 
@@ -63,20 +94,30 @@ export const CreateBillTo = ({ newInvoice, setNewInvoice }) => {
         <div className="to-date">
           <label htmlFor="to-date">Invoice Date</label>
           <input
-            type="date"
+            readOnly
+            type="text"
             id="to-date"
             name="createdAt"
+            value={date}
             onChange={changeAlt}
           />
         </div>
         <div className="to-terms">
           <label htmlFor="to-terms">Payment Terms</label>
-          <input
-            type="text"
-            id="to-terms"
+          <PaymentTerms
+            date={defaultTerms}
+            action={toggle}
+            actionAlt={changeAlt}
             name="paymentTerms"
-            onChange={changeAlt}
           />
+          {termsListActive && (
+            <div className="to-terms-list">
+              <PaymentTerms date="1 day" action={changeDefaultTerms} />
+              <PaymentTerms date="7 days" action={changeDefaultTerms} />
+              <PaymentTerms date="14 days" action={changeDefaultTerms} />
+              <PaymentTerms date="30 days" action={changeDefaultTerms} />
+            </div>
+          )}
         </div>
         <div className="to-desc">
           <label htmlFor="to-desc">Project Description</label>
