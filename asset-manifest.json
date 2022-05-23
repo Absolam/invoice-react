@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/invoice-react/static/css/main.59abeb6d.css",
-    "main.js": "/invoice-react/static/js/main.9f963923.js",
+    "main.css": "/invoice-react/static/css/main.22923b49.css",
+    "main.js": "/invoice-react/static/js/main.b85119e0.js",
     "static/media/illustration-empty.svg": "/invoice-react/static/media/illustration-empty.e3122ec28052ac246263daf21c5e9764.svg",
     "index.html": "/invoice-react/index.html",
     "static/media/icon-delete.svg": "/invoice-react/static/media/icon-delete.55a4f6bdb58d753dfd4d9a42f42e8e53.svg",
@@ -9,11 +9,11 @@
     "static/media/icon-plus.svg": "/invoice-react/static/media/icon-plus.278c048a38de266d0e5bdbb8bcaaf395.svg",
     "static/media/icon-arrow-left.svg": "/invoice-react/static/media/icon-arrow-left.e9bb76376b884042fecf1abba1419934.svg",
     "static/media/icon-arrow-down.svg": "/invoice-react/static/media/icon-arrow-down.a6ed7bfffecda935c666fda2939c385c.svg",
-    "main.59abeb6d.css.map": "/invoice-react/static/css/main.59abeb6d.css.map",
-    "main.9f963923.js.map": "/invoice-react/static/js/main.9f963923.js.map"
+    "main.22923b49.css.map": "/invoice-react/static/css/main.22923b49.css.map",
+    "main.b85119e0.js.map": "/invoice-react/static/js/main.b85119e0.js.map"
   },
   "entrypoints": [
-    "static/css/main.59abeb6d.css",
-    "static/js/main.9f963923.js"
+    "static/css/main.22923b49.css",
+    "static/js/main.b85119e0.js"
   ]
 }
