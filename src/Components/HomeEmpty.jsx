@@ -1,11 +1,11 @@
 import { HomeHeader } from "./HomeHeader";
 import { Empty } from "./Empty";
 
-export const HomeEmpty = ({ listOfInvoices }) => {
+export const HomeEmpty = ({ listOfInvoices, darkMode }) => {
   return (
     <>
-      <HomeHeader listOfInvoices={listOfInvoices} />
-      <Empty className="empty-container" />
+      <HomeHeader listOfInvoices={listOfInvoices} darkMode={darkMode} />
+      <Empty className="empty-container" darkMode={darkMode} />
     </>
   );
 };

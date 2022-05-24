@@ -12,6 +12,7 @@
   --secondary-light-purple: rgb(146, 119, 255);
   --primary-dark-purple: rgb(55, 59, 83);
   --light-bg: rgb(248, 248, 251);
+  --input-auto-text: #fff;
 }
 
 html {
@@ -40,7 +41,26 @@ a:visited {
 body {
   height: 100vh;
   width: 100vw;
-  background-color: var(--light-bg);
+  background-color: #141625;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 1s ease-in-out 0s;
+  transition-delay: 5000s;
+  -webkit-text-fill-color: var(--input-auto-text);
 }
 
 .header {

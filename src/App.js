@@ -273,7 +273,7 @@ function App() {
 
   const [newInvoice, setNewInvoice] = useState({});
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   return (
     <Router>

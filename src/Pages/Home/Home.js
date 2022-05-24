@@ -21,7 +21,7 @@ export const Home = ({ listOfInvoices, setCurrentInvoice, darkMode }) => {
           darkMode={darkMode}
         />
       ) : (
-        <HomeEmpty listOfInvoices={listOfInvoices} />
+        <HomeEmpty listOfInvoices={listOfInvoices} darkMode={darkMode} />
       )}
     </div>
   );

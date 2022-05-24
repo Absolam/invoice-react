@@ -10,8 +10,10 @@ export const Header = ({ darkMode, setDarkMode }) => {
     setDarkMode(!darkMode);
     if (!darkMode) {
       document.querySelector("body").style.background = "#141625";
+      document.documentElement.style.setProperty("--input-auto-text", "white");
     } else {
       document.querySelector("body").style.background = "#f8f8fb";
+      document.documentElement.style.setProperty("--input-auto-text", "black");
     }
   }
 
