@@ -67,20 +67,20 @@ export const View = ({
           deleteInvoice={deleteInvoice}
           darkMode={darkMode}
         />
-      </div>
-      <BottomBar darkMode={darkMode}>
-        {/* <Link to="/invoice-react/edit">
+        <BottomBar darkMode={darkMode} clname="view-bottom-bar">
+          {/* <Link to="/invoice-react/edit">
           <Button text="Edit" clname="button-edit" />
         </Link> */}
-        <Button
-          text="Delete"
-          clname="button-delete"
-          event={() => setDeleteModal(true)}
-        />
-        <Link onClick={() => markPaid(currentInvoice.id)} to="/invoice-react">
-          <Button text="Mark as Paid" clname="button-mark" />
-        </Link>
-      </BottomBar>
+          <Button
+            text="Delete"
+            clname="button-delete"
+            event={() => setDeleteModal(true)}
+          />
+          <Link onClick={() => markPaid(currentInvoice.id)} to="/invoice-react">
+            <Button text="Mark as Paid" clname="button-mark" />
+          </Link>
+        </BottomBar>
+      </div>
     </div>
   );
 };

@@ -217,3 +217,50 @@
   font-weight: 700;
   font-size: 18px;
 }
+
+@media only screen and (min-width: 668px) {
+  .home {
+    display: flex;
+    justify-content: center;
+  }
+
+  .home-full {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    position: relative;
+    height: auto;
+  }
+
+  .home-header {
+    margin: 1.5rem 0;
+  }
+
+  .home-list-single {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .invoice-date-payment {
+    flex-direction: row;
+  }
+
+  .invoice-status-container--paid {
+    width: 100px;
+  }
+
+  .invoice-status-container--pending {
+    width: 100px;
+  }
+
+  .invoice-date-payment {
+    gap: 30px;
+  }
+
+  .invoice-date {
+    display: flex;
+    align-items: center;
+  }
+}

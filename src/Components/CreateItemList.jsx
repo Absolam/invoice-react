@@ -56,17 +56,7 @@ export const CreateItemList = ({
       <div className="item-list-grid">
         <div className="item-name">
           <label htmlFor="item-name">Item Name</label>
-          <input
-            type="text"
-            name="name"
-            id="item-name"
-            onChange={change}
-            style={{
-              backgroundColor: dark.darkBg,
-              border: dark.border,
-              color: dark.txtWhite,
-            }}
-          />
+          <input type="text" name="name" id="item-name" onChange={change} />
         </div>
         <div className="item-qty">
           <label htmlFor="item-qty">Qty</label>
@@ -76,11 +66,6 @@ export const CreateItemList = ({
             name="quantity"
             id="item-qty"
             onChange={change}
-            style={{
-              backgroundColor: dark.darkBg,
-              border: dark.border,
-              color: dark.txtWhite,
-            }}
           />
         </div>
         <div className="item-price">
@@ -91,11 +76,6 @@ export const CreateItemList = ({
             name="price"
             id="item-price"
             onChange={change}
-            style={{
-              backgroundColor: dark.darkBg,
-              border: dark.border,
-              color: dark.txtWhite,
-            }}
           />
         </div>
         <div className="item-total">
@@ -106,11 +86,6 @@ export const CreateItemList = ({
             name="total"
             id="item-total"
             onChange={change}
-            style={{
-              backgroundColor: dark.darkBg,
-              border: dark.border,
-              color: dark.txtWhite,
-            }}
           />
         </div>
         <div className="item-delete" onClick={() => remove(id)}>

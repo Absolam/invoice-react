@@ -1,4 +1,5 @@
 import { BsFillMoonFill } from "react-icons/bs";
+import { BsSunFill } from "react-icons/bs";
 import { BsFillPersonFill } from "react-icons/bs";
 import { ReactComponent as Logo } from "../images/logo.svg";
 import { Link } from "react-router-dom";
@@ -11,9 +12,19 @@ export const Header = ({ darkMode, setDarkMode }) => {
     if (!darkMode) {
       document.querySelector("body").style.background = "#141625";
       document.documentElement.style.setProperty("--input-auto-text", "white");
+      document.documentElement.style.setProperty("--input-bg", "#1e2139");
+      document.documentElement.style.setProperty("--input-text", "#fff");
+      document.documentElement.style.setProperty("--input-border", "#252945");
+      document.documentElement.style.setProperty("--box-shadow", "#00000040");
+      document.documentElement.style.setProperty("--view-item-bg", "#252945");
     } else {
       document.querySelector("body").style.background = "#f8f8fb";
       document.documentElement.style.setProperty("--input-auto-text", "black");
+      document.documentElement.style.setProperty("--input-bg", "#fff");
+      document.documentElement.style.setProperty("--input-text", "#000");
+      document.documentElement.style.setProperty("--input-border", "#dfe3fa");
+      document.documentElement.style.setProperty("--box-shadow", "#48549f40");
+      document.documentElement.style.setProperty("--view-item-bg", "#F9FAFE");
     }
   }
 
@@ -24,7 +35,12 @@ export const Header = ({ darkMode, setDarkMode }) => {
         <Logo className="header-logo" />
       </Link>
       <div className="header-icon-pic-container">
-        <BsFillMoonFill className="icon-moon" onClick={() => setDark()} />
+        {!darkMode && (
+          <BsFillMoonFill className="icon-moon" onClick={() => setDark()} />
+        )}
+        {darkMode && (
+          <BsSunFill className="icon-moon" onClick={() => setDark()} />
+        )}
         <span></span>
         <BsFillPersonFill className="icon-person" />
       </div>

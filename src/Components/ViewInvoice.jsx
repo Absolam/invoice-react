@@ -37,60 +37,62 @@ export const ViewInvoice = ({
       className="view-invoice"
       style={{ backgroundColor: dark.darkBg, color: dark.txtOffWhite }}
     >
-      <div>
-        <p className="invoice-id">
-          #{id && <span style={{ color: dark.txtWhite }}>{id}</span>}
-        </p>
-        {description && <p>{description}</p>}
-      </div>
-      <div className="sender-address">
-        {senderAddress && <p>{senderAddress.street}</p>}
-        {senderAddress && <p>{senderAddress.city}</p>}
-        {senderAddress && <p>{senderAddress.postCode}</p>}
-        {senderAddress && <p>{senderAddress.country}</p>}
-      </div>
-      <div className="invoice-date-bill">
-        <div className="invoice-dates">
-          <div>
-            <p>Invoice Date</p>
-            <p>
-              {createdAt && (
-                <span style={{ color: dark.txtWhite }}>{createdAt}</span>
-              )}
-            </p>
+      <div className="test">
+        <div>
+          <p className="invoice-id">
+            #{id && <span style={{ color: dark.txtWhite }}>{id}</span>}
+          </p>
+          {description && <p>{description}</p>}
+        </div>
+        <div className="sender-address">
+          {senderAddress && <p>{senderAddress.street}</p>}
+          {senderAddress && <p>{senderAddress.city}</p>}
+          {senderAddress && <p>{senderAddress.postCode}</p>}
+          {senderAddress && <p>{senderAddress.country}</p>}
+        </div>
+        <div className="invoice-date-bill">
+          <div className="invoice-dates">
+            <div>
+              <p>Invoice Date</p>
+              <p>
+                {createdAt && (
+                  <span style={{ color: dark.txtWhite }}>{createdAt}</span>
+                )}
+              </p>
+            </div>
+            <div>
+              <p>Payment Due</p>
+              <p>
+                {paymentDue && (
+                  <span style={{ color: dark.txtWhite }}>{paymentDue}</span>
+                )}
+              </p>
+            </div>
           </div>
           <div>
-            <p>Payment Due</p>
+            <p>Bill To</p>
             <p>
-              {paymentDue && (
-                <span style={{ color: dark.txtWhite }}>{paymentDue}</span>
+              {clientName && (
+                <span style={{ color: dark.txtWhite }}>{clientName}</span>
               )}
             </p>
+            {clientAddress && <p>{clientAddress.street}</p>}
+            {clientAddress && <p>{clientAddress.city}</p>}
+            {clientAddress && <p>{clientAddress.postCode}</p>}
+            {clientAddress && <p>{clientAddress.country}</p>}
           </div>
         </div>
+
         <div>
-          <p>Bill To</p>
+          <p>Sent to</p>
           <p>
-            {clientName && (
-              <span style={{ color: dark.txtWhite }}>{clientName}</span>
+            {clientEmail && (
+              <span style={{ color: dark.txtWhite }}>{clientEmail}</span>
             )}
           </p>
-          {clientAddress && <p>{clientAddress.street}</p>}
-          {clientAddress && <p>{clientAddress.city}</p>}
-          {clientAddress && <p>{clientAddress.postCode}</p>}
-          {clientAddress && <p>{clientAddress.country}</p>}
         </div>
       </div>
-
-      <div>
-        <p>Sent to</p>
-        <p>
-          {clientEmail && (
-            <span style={{ color: dark.txtWhite }}>{clientEmail}</span>
-          )}
-        </p>
-      </div>
-      <div>
+      <div className="view-item-container">
         <div className="item-container">
           {items &&
             items.map((item) => (

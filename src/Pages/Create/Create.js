@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { GoBack } from "../../Components/GoBack";
+import { GoBackOnPage } from "../../Components/GoBackOnPage";
 import { CreateBillFrom } from "../../Components/CreateBillFrom";
 import { CreateBillTo } from "../../Components/CreateBillTo";
 import { CreateItemList } from "../../Components/CreateItemList";
@@ -12,9 +13,11 @@ import "../Create/index.css";
 export const Create = ({
   newInvoice,
   setNewInvoice,
-  listOfInvoices,
   setListOfInvoices,
   darkMode,
+  windowWidth,
+  createSideBar,
+  setCreateSideBar,
 }) => {
   const [itemList, setItemList] = useState([]);
 
@@ -186,20 +189,27 @@ export const Create = ({
   }
 
   return (
-    <form onSubmit={triggerModal}>
+    <form onSubmit={triggerModal} className="create-container">
       <div className="create" style={{ backgroundColor: dark.darkBg }}>
         {modelOpen && (
           <Modal
             send={send}
             header="Confirm Send"
             text="Are you sure you want to send?"
+            darkMode={darkMode}
           >
-            <Button text="Cancel" clname="button-cancel" />
+            <Button
+              text="Cancel"
+              clname="button-cancel"
+              darkMode={darkMode}
+              event={() => setModelOpen(false)}
+            />
             <Link to="/invoice-react">
               <Button text="Submit" clname="button-send" event={() => send()} />
             </Link>
           </Modal>
         )}
+
         <GoBack darkMode={darkMode} />
         <h2 style={{ color: dark.txtWhite }}>New Invoice</h2>
         <CreateBillFrom

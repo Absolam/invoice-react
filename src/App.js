@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { Home } from "./Pages/Home/Home";
 import { View } from "./Pages/View/View";
@@ -275,6 +275,35 @@ function App() {
 
   const [darkMode, setDarkMode] = useState(true);
 
+  const [windowWidth, setWindowWidth] = useState(window.screen.availWidth);
+
+  useEffect(() => {
+    const debouncedHandleResize = debounce(function windowChange() {
+      setWindowWidth(window.screen.availWidth);
+      console.log(windowWidth);
+    }, 300);
+
+    window.addEventListener("resize", debouncedHandleResize);
+
+    return (_) => {
+      window.removeEventListener("resize", debouncedHandleResize);
+    };
+  });
+
+  function debounce(fn, ms) {
+    let timer;
+
+    return (_) => {
+      clearTimeout(timer);
+
+      timer = setTimeout((_) => {
+        timer = null;
+
+        fn.apply(this, arguments);
+      }, ms);
+    };
+  }
+
   return (
     <Router>
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
@@ -287,6 +316,9 @@ function App() {
               setListOfInvoices={setListOfInvoices}
               setCurrentInvoice={setCurrentInvoice}
               darkMode={darkMode}
+              windowWidth={windowWidth}
+              newInvoice={newInvoice}
+              setNewInvoice={setNewInvoice}
             />
           }
         />
@@ -298,6 +330,7 @@ function App() {
               listOfInvoices={listOfInvoices}
               setListOfInvoices={setListOfInvoices}
               darkMode={darkMode}
+              windowWidth={windowWidth}
             />
           }
         />
@@ -311,6 +344,7 @@ function App() {
               listOfInvoices={listOfInvoices}
               setListOfInvoices={setListOfInvoices}
               darkMode={darkMode}
+              windowWidth={windowWidth}
             />
           }
         />

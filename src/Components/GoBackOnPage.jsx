@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
 import { ReactComponent as Arrow } from "../images/icon-arrow-left.svg";
 
-export const GoBack = ({ darkMode, action }) => {
+export const GoBackOnPage = ({ darkMode, action }) => {
   let dark = darkMode ? "#fff" : "";
   return (
-    <Link className="go-back" to="/invoice-react" onClick={action}>
+    <div className="go-back" onClick={action}>
       <Arrow />
       <p style={{ color: dark }}>Go back</p>
-    </Link>
+    </div>
   );
 };
