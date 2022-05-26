@@ -275,11 +275,11 @@ function App() {
 
   const [darkMode, setDarkMode] = useState(true);
 
-  const [windowWidth, setWindowWidth] = useState(window.screen.availWidth);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const debouncedHandleResize = debounce(function windowChange() {
-      setWindowWidth(window.screen.availWidth);
+      setWindowWidth(window.innerWidth);
     }, 100);
 
     window.addEventListener("resize", debouncedHandleResize);

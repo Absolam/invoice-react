@@ -17,7 +17,7 @@ export const InvoiceItem = ({
     : "";
   return (
     <div>
-      {windowWidth > "668px" ? (
+      {windowWidth > 668 ? (
         <div
           className="invoice-item-large"
           style={{ backgroundColor: dark.itemBg, color: dark.txtOffWhite }}
