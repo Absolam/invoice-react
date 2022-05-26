@@ -62,8 +62,12 @@
 }
 
 .invoice-date-bill {
-  display: flex;
-  gap: 3rem;
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "date bill-to"
+    "email . ";
 }
 
 .item-container {
@@ -125,23 +129,51 @@
   }
 
   .view-invoice {
-    /* flex-direction: row; */
+    flex-direction: column;
     margin-bottom: 0;
   }
 
   .view-bottom-bar {
     position: static;
     width: 100%;
-    border-radius: 30px 30px 0 0;
+    border-radius: 4px 4px 4px 4px;
   }
 
-  .view-item-container {
-    /* display: flex; */
-    width: 50%;
+  .invoice-date-bill {
+    grid-template-areas: "date bill-to email";
+    margin-top: 0;
   }
 
-  .test {
+  .invoice-id-desc-sender-address {
     display: flex;
+    justify-content: space-between;
+  }
+
+  .invoice-item-large {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 0.4rem 1.5rem;
+    border-radius: 4px 4px 0 0;
+    margin-top: 1.5rem;
+  }
+
+  .invoice-item-name {
+    text-align: start;
+  }
+  .invoice-item-quantity {
+    text-align: end;
+  }
+  .invoice-item-price {
+    text-align: end;
+  }
+  .invoice-item-total {
+    text-align: end;
+  }
+  .invoice-item-name {
+    text-align: start;
   }
 }

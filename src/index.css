@@ -154,12 +154,14 @@ input:-webkit-autofill:active {
   color: #7e88c3;
   padding: 1rem 1.5rem;
   border-radius: 24px;
+  cursor: pointer;
 }
 .button-delete {
   background-color: #ec5757;
   color: var(--white-bg);
   padding: 1rem 1.5rem;
   border-radius: 24px;
+  cursor: pointer;
 }
 
 .button-mark {
@@ -167,6 +169,7 @@ input:-webkit-autofill:active {
   color: var(--white-bg);
   padding: 1rem 1.5rem;
   border-radius: 24px;
+  cursor: pointer;
 }
 
 .overcast {
@@ -211,6 +214,7 @@ input:-webkit-autofill:active {
   padding: 0.5rem 1rem;
   color: #7e88c3;
   border-radius: 24px;
+  cursor: pointer;
 }
 
 .button-send {
@@ -218,4 +222,29 @@ input:-webkit-autofill:active {
   padding: 0.8rem 1.5rem;
   color: var(--white-bg);
   border-radius: 24px;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 668px) {
+  .header-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header {
+    width: 700px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .header-logo-container {
+    border-radius: 0px 20px 20px 20px;
+  }
+
+  .header-logo-container span {
+    border-radius: 20px 0px 20px 20px;
+  }
+
+  .modal {
+    width: 500px;
+  }
 }

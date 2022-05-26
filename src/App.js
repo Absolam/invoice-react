@@ -280,8 +280,7 @@ function App() {
   useEffect(() => {
     const debouncedHandleResize = debounce(function windowChange() {
       setWindowWidth(window.screen.availWidth);
-      console.log(windowWidth);
-    }, 300);
+    }, 100);
 
     window.addEventListener("resize", debouncedHandleResize);
 

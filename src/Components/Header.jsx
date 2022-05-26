@@ -29,20 +29,22 @@ export const Header = ({ darkMode, setDarkMode }) => {
   }
 
   return (
-    <div className="header" style={{ backgroundColor: dark }}>
-      <Link to="/invoice-react" className="header-logo-container">
-        <span></span>
-        <Logo className="header-logo" />
-      </Link>
-      <div className="header-icon-pic-container">
-        {!darkMode && (
-          <BsFillMoonFill className="icon-moon" onClick={() => setDark()} />
-        )}
-        {darkMode && (
-          <BsSunFill className="icon-moon" onClick={() => setDark()} />
-        )}
-        <span></span>
-        <BsFillPersonFill className="icon-person" />
+    <div className="header-container">
+      <div className="header" style={{ backgroundColor: dark }}>
+        <Link to="/invoice-react" className="header-logo-container">
+          <span></span>
+          <Logo className="header-logo" />
+        </Link>
+        <div className="header-icon-pic-container">
+          {!darkMode && (
+            <BsFillMoonFill className="icon-moon" onClick={() => setDark()} />
+          )}
+          {darkMode && (
+            <BsSunFill className="icon-moon" onClick={() => setDark()} />
+          )}
+          <span></span>
+          <BsFillPersonFill className="icon-person" />
+        </div>
       </div>
     </div>
   );

@@ -13,6 +13,7 @@ export const View = ({
   listOfInvoices,
   setListOfInvoices,
   darkMode,
+  windowWidth,
 }) => {
   const [deleteModal, setDeleteModal] = useState(false);
 
@@ -66,6 +67,7 @@ export const View = ({
           setDeleteModal={setDeleteModal}
           deleteInvoice={deleteInvoice}
           darkMode={darkMode}
+          windowWidth={windowWidth}
         />
         <BottomBar darkMode={darkMode} clname="view-bottom-bar">
           {/* <Link to="/invoice-react/edit">

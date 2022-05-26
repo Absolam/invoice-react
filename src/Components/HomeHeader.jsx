@@ -10,11 +10,11 @@ export const HomeHeader = ({
   setCreateSideBar,
 }) => {
   function checkInvoices(invoices) {
-    if (windowWidth < 668 && invoices.length > 0) {
+    if (windowWidth < "668px" && invoices.length > 0) {
       return invoices.length === 1
         ? `There is ${invoices.length} total invoice`
         : `There are ${invoices.length} total invoices`;
-    } else if (windowWidth > 668 && invoices.length > 0) {
+    } else if (windowWidth > "668px" && invoices.length > 0) {
       return invoices.length === 1
         ? `There is ${invoices.length} total invoice`
         : `There are ${invoices.length} total invoices`;
@@ -42,7 +42,7 @@ export const HomeHeader = ({
             className="home-header-button-container"
           >
             <img src={plus} alt="" className="icon-plus" />
-            {windowWidth < 668 ? <p>New</p> : <p>New Invoice</p>}
+            {windowWidth > "668px" ? <p>New Invoice</p> : <p>New</p>}
           </Link>
         )}
       </div>

@@ -1,4 +1,10 @@
-export const InvoiceItem = ({ name, quantity, price, darkMode }) => {
+export const InvoiceItem = ({
+  name,
+  quantity,
+  price,
+  darkMode,
+  windowWidth,
+}) => {
   let total = quantity * price;
 
   let dark = darkMode
@@ -10,21 +16,43 @@ export const InvoiceItem = ({ name, quantity, price, darkMode }) => {
       }
     : "";
   return (
-    <div
-      className="invoice-item"
-      style={{ backgroundColor: dark.itemBg, color: dark.txtOffWhite }}
-    >
-      <div>
-        <p>
-          <span style={{ color: dark.txtWhite }}>{name}</span>
-        </p>
-        <div className="invoice-item-qty-price">
-          <p>{`${quantity} x $${price}`}</p>
+    <div>
+      {windowWidth > "668px" ? (
+        <div
+          className="invoice-item-large"
+          style={{ backgroundColor: dark.itemBg, color: dark.txtOffWhite }}
+        >
+          <p className="invoice-item-name">Name</p>
+          <p className="invoice-item-quantity">Quantity</p>
+          <p className="invoice-item-price">Price</p>
+          <p className="invoice-item-total">Total</p>
+          <p className="invoice-item-name">
+            <span style={{ color: dark.txtWhite }}>{name}</span>
+          </p>
+          <p className="invoice-item-quantity">{quantity}</p>
+          <p className="invoice-item-price">{price}</p>
+          <p className="invoice-item-total">
+            <span style={{ color: dark.txtWhite }}>${total.toFixed(2)}</span>
+          </p>
         </div>
-      </div>
-      <p>
-        <span style={{ color: dark.txtWhite }}>${total.toFixed(2)}</span>
-      </p>
+      ) : (
+        <div
+          className="invoice-item"
+          style={{ backgroundColor: dark.itemBg, color: dark.txtOffWhite }}
+        >
+          <div>
+            <p>
+              <span style={{ color: dark.txtWhite }}>{name}</span>
+            </p>
+            <div className="invoice-item-qty-price">
+              <p>{`${quantity} x $${price}`}</p>
+            </div>
+          </div>
+          <p>
+            <span style={{ color: dark.txtWhite }}>${total.toFixed(2)}</span>
+          </p>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { InvoiceItem } from "./InvoiceItem";
+import { InvoiceItemLarge } from "./InvoiceItemLarge";
 import { Modal } from "./Modal";
 import { Button } from "./Buttons";
 import { Link } from "react-router-dom";
@@ -9,6 +10,7 @@ export const ViewInvoice = ({
   deleteModal,
   setDeleteModal,
   darkMode,
+  windowWidth,
 }) => {
   const {
     id,
@@ -37,8 +39,8 @@ export const ViewInvoice = ({
       className="view-invoice"
       style={{ backgroundColor: dark.darkBg, color: dark.txtOffWhite }}
     >
-      <div className="test">
-        <div>
+      <div className="invoice-id-desc-sender-address">
+        <div className="invoice-id-desc">
           <p className="invoice-id">
             #{id && <span style={{ color: dark.txtWhite }}>{id}</span>}
           </p>
@@ -50,40 +52,40 @@ export const ViewInvoice = ({
           {senderAddress && <p>{senderAddress.postCode}</p>}
           {senderAddress && <p>{senderAddress.country}</p>}
         </div>
-        <div className="invoice-date-bill">
-          <div className="invoice-dates">
-            <div>
-              <p>Invoice Date</p>
-              <p>
-                {createdAt && (
-                  <span style={{ color: dark.txtWhite }}>{createdAt}</span>
-                )}
-              </p>
-            </div>
-            <div>
-              <p>Payment Due</p>
-              <p>
-                {paymentDue && (
-                  <span style={{ color: dark.txtWhite }}>{paymentDue}</span>
-                )}
-              </p>
-            </div>
-          </div>
+      </div>
+      <div className="invoice-date-bill">
+        <div className="invoice-dates">
           <div>
-            <p>Bill To</p>
+            <p>Invoice Date</p>
             <p>
-              {clientName && (
-                <span style={{ color: dark.txtWhite }}>{clientName}</span>
+              {createdAt && (
+                <span style={{ color: dark.txtWhite }}>{createdAt}</span>
               )}
             </p>
-            {clientAddress && <p>{clientAddress.street}</p>}
-            {clientAddress && <p>{clientAddress.city}</p>}
-            {clientAddress && <p>{clientAddress.postCode}</p>}
-            {clientAddress && <p>{clientAddress.country}</p>}
+          </div>
+          <div>
+            <p>Payment Due</p>
+            <p>
+              {paymentDue && (
+                <span style={{ color: dark.txtWhite }}>{paymentDue}</span>
+              )}
+            </p>
           </div>
         </div>
+        <div className="view-bill-to">
+          <p>Bill To</p>
+          <p>
+            {clientName && (
+              <span style={{ color: dark.txtWhite }}>{clientName}</span>
+            )}
+          </p>
+          {clientAddress && <p>{clientAddress.street}</p>}
+          {clientAddress && <p>{clientAddress.city}</p>}
+          {clientAddress && <p>{clientAddress.postCode}</p>}
+          {clientAddress && <p>{clientAddress.country}</p>}
+        </div>
 
-        <div>
+        <div className="view-sent-to">
           <p>Sent to</p>
           <p>
             {clientEmail && (
@@ -103,9 +105,11 @@ export const ViewInvoice = ({
                 total={item.quantity * item.price}
                 key={`${item.name}${item.price}`}
                 darkMode={darkMode}
+                windowWidth={windowWidth}
               />
             ))}
         </div>
+
         <div
           className="invoice-item-grand-total"
           style={{ backgroundColor: dark.blackBg }}
