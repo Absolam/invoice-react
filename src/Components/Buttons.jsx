@@ -11,12 +11,7 @@ export const Button = ({ text, clname, event, type, darkMode }) => {
     : "";
 
   return (
-    <button
-      type={type}
-      onClick={event}
-      className={clname}
-      style={{ backgroundColor: dark.discard }}
-    >
+    <button type={type} onClick={event} className={clname}>
       {text}
     </button>
   );

@@ -10,11 +10,6 @@ export const PaymentTerms = ({ date, action, actionAlt, darkMode }) => {
         name="paymentTerms"
         onClick={action}
         onChange={actionAlt}
-        style={{
-          backgroundColor: dark.darkBg,
-          border: dark.border,
-          color: dark.txtWhite,
-        }}
       >
         {date}
       </button>

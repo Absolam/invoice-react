@@ -190,7 +190,7 @@ export const Create = ({
 
   return (
     <form onSubmit={triggerModal} className="create-container">
-      <div className="create" style={{ backgroundColor: dark.darkBg }}>
+      <div className="create">
         {modelOpen && (
           <Modal
             send={send}
@@ -211,7 +211,7 @@ export const Create = ({
         )}
 
         <GoBack darkMode={darkMode} />
-        <h2 style={{ color: dark.txtWhite }}>New Invoice</h2>
+        <h2>New Invoice</h2>
         <CreateBillFrom
           newInvoice={newInvoice}
           setNewInvoice={setNewInvoice}
@@ -229,12 +229,7 @@ export const Create = ({
         <div className="item-list-array">
           <h3 className="item-list-header">Item List</h3>
           {itemList.map((item) => item)}
-          <button
-            type="button"
-            className="add-item"
-            onClick={addItemList}
-            style={{ backgroundColor: dark.darkBgAlt }}
-          >
+          <button type="button" className="add-item" onClick={addItemList}>
             + Add New Item
           </button>
         </div>

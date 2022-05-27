@@ -6,7 +6,7 @@ export const GoBack = ({ darkMode, action }) => {
   return (
     <Link className="go-back" to="/invoice-react" onClick={action}>
       <Arrow />
-      <p style={{ color: dark }}>Go back</p>
+      <p>Go back</p>
     </Link>
   );
 };

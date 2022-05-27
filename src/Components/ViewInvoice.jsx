@@ -35,15 +35,10 @@ export const ViewInvoice = ({
     : "";
 
   return (
-    <div
-      className="view-invoice"
-      style={{ backgroundColor: dark.darkBg, color: dark.txtOffWhite }}
-    >
+    <div className="view-invoice">
       <div className="invoice-id-desc-sender-address">
         <div className="invoice-id-desc">
-          <p className="invoice-id">
-            #{id && <span style={{ color: dark.txtWhite }}>{id}</span>}
-          </p>
+          <p className="invoice-id">#{id && <span>{id}</span>}</p>
           {description && <p>{description}</p>}
         </div>
         <div className="sender-address">
@@ -57,28 +52,16 @@ export const ViewInvoice = ({
         <div className="invoice-dates">
           <div>
             <p>Invoice Date</p>
-            <p>
-              {createdAt && (
-                <span style={{ color: dark.txtWhite }}>{createdAt}</span>
-              )}
-            </p>
+            <p>{createdAt && <span>{createdAt}</span>}</p>
           </div>
           <div>
             <p>Payment Due</p>
-            <p>
-              {paymentDue && (
-                <span style={{ color: dark.txtWhite }}>{paymentDue}</span>
-              )}
-            </p>
+            <p>{paymentDue && <span>{paymentDue}</span>}</p>
           </div>
         </div>
         <div className="view-bill-to">
           <p>Bill To</p>
-          <p>
-            {clientName && (
-              <span style={{ color: dark.txtWhite }}>{clientName}</span>
-            )}
-          </p>
+          <p>{clientName && <span>{clientName}</span>}</p>
           {clientAddress && <p>{clientAddress.street}</p>}
           {clientAddress && <p>{clientAddress.city}</p>}
           {clientAddress && <p>{clientAddress.postCode}</p>}
@@ -87,11 +70,7 @@ export const ViewInvoice = ({
 
         <div className="view-sent-to">
           <p>Sent to</p>
-          <p>
-            {clientEmail && (
-              <span style={{ color: dark.txtWhite }}>{clientEmail}</span>
-            )}
-          </p>
+          <p>{clientEmail && <span>{clientEmail}</span>}</p>
         </div>
       </div>
       <div className="view-item-container">
@@ -118,11 +97,8 @@ export const ViewInvoice = ({
             ))}
         </div>
 
-        <div
-          className="invoice-item-grand-total"
-          style={{ backgroundColor: dark.blackBg }}
-        >
-          <p style={{ color: dark.txtWhite }}>Grand Total</p>
+        <div className="invoice-item-grand-total">
+          <p>Grand Total</p>
           <p>{total && <span>${total.toFixed(2)}</span>}</p>
         </div>
       </div>

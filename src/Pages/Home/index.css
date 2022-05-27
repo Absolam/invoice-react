@@ -19,7 +19,7 @@
 .home-header-status-container h3 {
   font-size: 15px;
   font-weight: 500;
-  color: #888eb0;
+  color: var(--light-text-color-swap);
 }
 
 .home-header-filter-button-container {
@@ -57,7 +57,7 @@
 }
 
 .home-header-button-container p {
-  color: var(--white-bg);
+  color: white;
 
   display: flex;
   align-items: center;
@@ -66,7 +66,7 @@
 }
 
 .icon-plus {
-  background-color: var(--white-bg);
+  background-color: white;
   border-radius: 50%;
   padding: 0.5rem;
 
@@ -118,7 +118,8 @@
 }
 
 .home-list-single {
-  background-color: var(--white-bg);
+  background-color: var(--home-list-bg);
+  color: var(--text-color-swap);
   padding: 1.5rem;
   border-radius: 8px;
   font-size: 15px;

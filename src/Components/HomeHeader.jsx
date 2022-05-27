@@ -26,10 +26,10 @@ export const HomeHeader = ({
   let dark = darkMode ? "#fff" : "";
 
   return (
-    <div className="home-header" style={{ color: dark }}>
+    <div className="home-header">
       <div className="home-header-status-container">
         <h2>Invoices</h2>
-        <h3 style={{ color: dark }}>{checkInvoices(listOfInvoices)}</h3>
+        <h3>{checkInvoices(listOfInvoices)}</h3>
       </div>
       <div className="home-header-filter-button-container">
         {/* <div className="home-header-filter-container">

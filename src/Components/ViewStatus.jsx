@@ -12,7 +12,7 @@ export const ViewStatus = ({
   let dark = darkMode ? "#1E2139" : "";
 
   return (
-    <div className="view-status-container" style={{ backgroundColor: dark }}>
+    <div className="view-status-container">
       <p>Status</p>
       <div>
         {windowWidth > 668 ? (

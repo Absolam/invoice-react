@@ -17,10 +17,7 @@ export const HomeList = ({ listOfInvoices, setCurrentInvoice, darkMode }) => {
           key={invoice.id}
           onClick={() => getInvoice(invoice.id)}
         >
-          <div
-            className="home-list-single"
-            style={{ backgroundColor: dark.bgDark, color: dark.txtWhite }}
-          >
+          <div className="home-list-single">
             <h4>
               <span>#</span>
               {invoice.id}

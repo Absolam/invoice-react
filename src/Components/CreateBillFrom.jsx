@@ -30,11 +30,6 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice, darkMode }) => {
             name="street"
             onChange={change}
             required
-            style={{
-              backgroundColor: dark.darkBg,
-              border: dark.border,
-              color: dark.txtWhite,
-            }}
           />
         </div>
         <div className="from-city">
@@ -45,11 +40,6 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice, darkMode }) => {
             name="city"
             onChange={change}
             required
-            style={{
-              backgroundColor: dark.darkBg,
-              border: dark.border,
-              color: dark.txtWhite,
-            }}
           />
         </div>
         <div className="from-post-code">
@@ -60,11 +50,6 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice, darkMode }) => {
             name="postCode"
             onChange={change}
             required
-            style={{
-              backgroundColor: dark.darkBg,
-              border: dark.border,
-              color: dark.txtWhite,
-            }}
           />
         </div>
         <div className="from-country">
@@ -75,11 +60,6 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice, darkMode }) => {
             name="country"
             onChange={change}
             required
-            style={{
-              backgroundColor: dark.darkBg,
-              border: dark.border,
-              color: dark.txtWhite,
-            }}
           />
         </div>
       </div>
