@@ -96,6 +96,14 @@ export const ViewInvoice = ({
       </div>
       <div className="view-item-container">
         <div className="item-container">
+          {windowWidth > 668 && (
+            <div className="item-container-headers">
+              <p className="invoice-item-name">Name</p>
+              <p className="invoice-item-quantity">Quantity</p>
+              <p className="invoice-item-price">Price</p>
+              <p className="invoice-item-total">Total</p>
+            </div>
+          )}
           {items &&
             items.map((item) => (
               <InvoiceItem

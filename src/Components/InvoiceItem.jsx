@@ -22,10 +22,6 @@ export const InvoiceItem = ({
           className="invoice-item-large"
           style={{ backgroundColor: dark.itemBg, color: dark.txtOffWhite }}
         >
-          <p className="invoice-item-name">Name</p>
-          <p className="invoice-item-quantity">Quantity</p>
-          <p className="invoice-item-price">Price</p>
-          <p className="invoice-item-total">Total</p>
           <p className="invoice-item-name">
             <span style={{ color: dark.txtWhite }}>{name}</span>
           </p>

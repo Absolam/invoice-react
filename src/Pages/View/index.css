@@ -73,6 +73,7 @@
 .item-container {
   background-color: var(--view-item-bg);
   border-radius: 8px 8px 0 0;
+  margin-top: 1.5rem;
 }
 
 .invoice-item {
@@ -84,7 +85,6 @@
   font-size: 14px;
   padding: 0.4rem 1.5rem;
   border-radius: 4px 4px 0 0;
-  margin-top: 1.5rem;
 }
 
 .invoice-item > p {
@@ -130,7 +130,18 @@
 
   .view-invoice {
     flex-direction: column;
-    margin-bottom: 0;
+    margin-bottom: 3rem;
+  }
+
+  .view-status-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .view-status-large {
+    display: flex;
+    /* justify-content: space-evenly; */
+    gap: 1.5rem;
   }
 
   .view-bottom-bar {
@@ -149,6 +160,17 @@
     justify-content: space-between;
   }
 
+  .item-container {
+    padding-bottom: 0.5rem;
+  }
+
+  .item-container-headers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    padding: 0.4rem 1.5rem;
+  }
+
   .invoice-item-large {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -158,7 +180,6 @@
     font-size: 14px;
     padding: 0.4rem 1.5rem;
     border-radius: 4px 4px 0 0;
-    margin-top: 1.5rem;
   }
 
   .invoice-item-name {
