@@ -15,7 +15,7 @@ export const ViewStatus = ({
     <div className="view-status-container" style={{ backgroundColor: dark }}>
       <p>Status</p>
       <div>
-        {windowWidth > 668 && (
+        {windowWidth > 668 ? (
           <div className="view-status-large">
             <Button
               text="Delete"
@@ -30,6 +30,8 @@ export const ViewStatus = ({
             </Link>
             <StatusTag status={currentInvoice.status} darkMode={darkMode} />
           </div>
+        ) : (
+          <StatusTag status={currentInvoice.status} darkMode={darkMode} />
         )}
       </div>
     </div>

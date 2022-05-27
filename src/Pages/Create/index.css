@@ -269,6 +269,9 @@
   cursor: pointer;
 }
 
+.add-item:hover {
+}
+
 .create-bottom-bar {
   box-shadow: 0px -20px 40px rgba(0, 0, 0, 0.192);
   padding: 1rem 0;

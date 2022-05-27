@@ -9,7 +9,8 @@ export const Header = ({ darkMode, setDarkMode }) => {
 
   function setDark() {
     setDarkMode(!darkMode);
-    if (!darkMode) {
+    if (darkMode === false) {
+      // SET TO DARK
       document.querySelector("body").style.background = "#141625";
       document.documentElement.style.setProperty("--input-auto-text", "white");
       document.documentElement.style.setProperty("--input-bg", "#1e2139");
@@ -17,7 +18,9 @@ export const Header = ({ darkMode, setDarkMode }) => {
       document.documentElement.style.setProperty("--input-border", "#252945");
       document.documentElement.style.setProperty("--box-shadow", "#00000040");
       document.documentElement.style.setProperty("--view-item-bg", "#252945");
+      localStorage.setItem("theme", JSON.stringify(true));
     } else {
+      // SET TO LIGHT
       document.querySelector("body").style.background = "#f8f8fb";
       document.documentElement.style.setProperty("--input-auto-text", "black");
       document.documentElement.style.setProperty("--input-bg", "#fff");
@@ -25,6 +28,7 @@ export const Header = ({ darkMode, setDarkMode }) => {
       document.documentElement.style.setProperty("--input-border", "#dfe3fa");
       document.documentElement.style.setProperty("--box-shadow", "#48549f40");
       document.documentElement.style.setProperty("--view-item-bg", "#F9FAFE");
+      localStorage.setItem("theme", JSON.stringify(false));
     }
   }
 
@@ -43,7 +47,7 @@ export const Header = ({ darkMode, setDarkMode }) => {
             <BsSunFill className="icon-moon" onClick={() => setDark()} />
           )}
           <span></span>
-          <BsFillPersonFill className="icon-person" />
+          <BsFillPersonFill className="icon-person wobble" />
         </div>
       </div>
     </div>

@@ -18,6 +18,7 @@
   --input-border: #252945;
   --box-shadow: #00000040;
   --view-item-bg: #252945;
+  --view-shadow: #92929273;
 }
 
 html {
@@ -94,7 +95,14 @@ input:-webkit-autofill:active {
 
   position: absolute;
   bottom: 0;
-  /* transform: translateY(50%); */
+
+  /* transition: height 600ms ease-in-out; */
+  transition: border-radius 300ms ease-out;
+}
+
+.header-logo-container span:hover {
+  /* height: 100%; */
+  border-radius: 0 20px 20px 0;
 }
 
 .header-logo {
@@ -121,6 +129,37 @@ input:-webkit-autofill:active {
   width: 32px;
   height: 32px;
   color: #7e88c3;
+  cursor: pointer;
+
+  animation-duration: 1s;
+}
+
+.wobble:hover {
+  animation-name: wobble;
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: rotate(-3deg);
+  }
+  30% {
+    transform: rotate(3deg);
+  }
+  45% {
+    transform: rotate(-3deg);
+  }
+  60% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .icon-moon {
@@ -128,6 +167,12 @@ input:-webkit-autofill:active {
   height: 20px;
   color: #7e88c3;
   cursor: pointer;
+
+  transition: color 300ms ease-out;
+}
+
+.icon-moon:hover {
+  color: #c1c5de;
 }
 
 .go-back {
@@ -162,6 +207,12 @@ input:-webkit-autofill:active {
   padding: 1rem 1.5rem;
   border-radius: 24px;
   cursor: pointer;
+
+  transition: background-color 200ms ease-out;
+}
+
+.button-delete:hover {
+  background-color: #ff9797;
 }
 
 .button-mark {
@@ -170,6 +221,12 @@ input:-webkit-autofill:active {
   padding: 1rem 1.5rem;
   border-radius: 24px;
   cursor: pointer;
+
+  transition: background-color 200ms ease-out;
+}
+
+.button-mark:hover {
+  background-color: #9277ff;
 }
 
 .overcast {
@@ -190,6 +247,7 @@ input:-webkit-autofill:active {
   height: auto;
   background-color: var(--white-bg);
   border-radius: 8px;
+  line-height: 1.2;
 
   display: flex;
   flex-direction: column;

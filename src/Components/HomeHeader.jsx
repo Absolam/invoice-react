@@ -16,8 +16,8 @@ export const HomeHeader = ({
         : `There are ${invoices.length} total invoices`;
     } else if (windowWidth < 668 && invoices.length > 0) {
       return invoices.length === 1
-        ? `${invoices.length} total invoice`
-        : `${invoices.length} total invoices`;
+        ? `${invoices.length} invoice`
+        : `${invoices.length} invoices`;
     } else if (invoices.length === 0) {
       return "No invoices";
     }
