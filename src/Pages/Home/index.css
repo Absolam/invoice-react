@@ -135,7 +135,8 @@
 .home-list-single:hover {
   /* box-shadow: 0px 5px 20px var(--view-shadow); */
   /* outline: 1px solid rgb(154, 154, 154); */
-  transform: translateY(-3px);
+  /* transform: translateY(-3px); */
+  box-shadow: 0 10px 20px var(--box-shadow);
 }
 
 .home-list-single span {

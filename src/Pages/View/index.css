@@ -164,6 +164,7 @@
 
   .item-container {
     padding-bottom: 0.5rem;
+    background-color: var(--view-item-single-bg);
   }
 
   .item-container-headers {
@@ -171,6 +172,7 @@
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
     padding: 0.4rem 1.5rem;
+    background-color: var(--view-item-single-bg);
   }
 
   .invoice-item-large {
@@ -182,6 +184,7 @@
     font-size: 14px;
     padding: 0.4rem 1.5rem;
     border-radius: 4px 4px 0 0;
+    background-color: var(--view-item-single-bg);
   }
 
   .invoice-item-name {
