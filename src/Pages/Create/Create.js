@@ -31,6 +31,15 @@ export const Create = ({
 
   const [date, setDate] = useState("");
 
+  const myRef = useRef(null);
+
+  const executeScroll = () =>
+    myRef.current.scrollIntoView({
+      behavior: "auto",
+      block: "center",
+      inline: "center",
+    });
+
   let dark = darkMode
     ? {
         darkBg: "#141625",
@@ -112,9 +121,6 @@ export const Create = ({
 
   function send() {
     setListOfInvoices((listOfInvoices) => [newInvoice, ...listOfInvoices]);
-    console.log(finalTotal);
-    console.log(itemValues);
-    console.log(newInvoice);
   }
 
   function triggerModal(e) {
@@ -190,26 +196,27 @@ export const Create = ({
 
   return (
     <form onSubmit={triggerModal} className="create-container">
-      <div className="create">
-        {modelOpen && (
-          <Modal
-            send={send}
-            header="Confirm Send"
-            text="Are you sure you want to send?"
+      {modelOpen && (
+        <Modal
+          send={send}
+          header="Confirm Send"
+          text="Are you sure you want to send?"
+          darkMode={darkMode}
+          refProp={myRef}
+          scroll={executeScroll}
+        >
+          <Button
+            text="Cancel"
+            clname="button-cancel"
             darkMode={darkMode}
-          >
-            <Button
-              text="Cancel"
-              clname="button-cancel"
-              darkMode={darkMode}
-              event={() => setModelOpen(false)}
-            />
-            <Link to="/invoice-react">
-              <Button text="Submit" clname="button-send" event={() => send()} />
-            </Link>
-          </Modal>
-        )}
-
+            event={() => setModelOpen(false)}
+          />
+          <Link to="/invoice-react">
+            <Button text="Submit" clname="button-send" event={() => send()} />
+          </Link>
+        </Modal>
+      )}
+      <div className="create">
         <GoBack darkMode={darkMode} />
         <h2>New Invoice</h2>
         <CreateBillFrom

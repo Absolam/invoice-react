@@ -1,9 +1,20 @@
 import { Overcast } from "./Overcast";
 import { useEffect } from "react";
 
-export const Modal = ({ send, sendRef, header, text, children, darkMode }) => {
+export const Modal = ({
+  header,
+  text,
+  children,
+  darkMode,
+  refProp,
+  scroll,
+}) => {
+  // useEffect(() => {
+  //   window.scrollTo(0, 700);
+  // });
+
   useEffect(() => {
-    window.scrollTo(0, 700);
+    scroll();
   });
 
   let dark = darkMode
@@ -21,7 +32,7 @@ export const Modal = ({ send, sendRef, header, text, children, darkMode }) => {
       <Overcast />
       <div
         className="modal"
-        ref={sendRef}
+        ref={refProp}
         style={{ backgroundColor: dark.darkBgAlt }}
       >
         <h4 style={{ color: dark.txtWhite }}>{header}</h4>

@@ -5,7 +5,7 @@ import { BottomBar } from "../../Components/BottomBar";
 import { Button } from "../../Components/Buttons";
 import "../View/index.css";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Modal } from "../../Components/Modal";
 
 export const View = ({
@@ -16,6 +16,15 @@ export const View = ({
   windowWidth,
 }) => {
   const [deleteModal, setDeleteModal] = useState(false);
+
+  const myRef = useRef(null);
+
+  const executeScroll = () =>
+    myRef.current.scrollIntoView({
+      behavior: "auto",
+      // block: "center",
+      // inline: "center",
+    });
 
   useEffect(() => {
     document.title = "Invoice | View";
@@ -41,6 +50,8 @@ export const View = ({
           darkMode={darkMode}
           header="Confirm Deletion"
           text={`Are you sure you want to delete invoice #${currentInvoice.id}? This action cannot be undone.`}
+          refProp={myRef}
+          scroll={executeScroll}
         >
           <Button
             text="Cancel"

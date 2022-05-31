@@ -56,11 +56,18 @@ export const CreateItemList = ({
       <div className="item-list-grid">
         <div className="item-name">
           <label htmlFor="item-name">Item Name</label>
-          <input type="text" name="name" id="item-name" onChange={change} />
+          <input
+            required
+            type="text"
+            name="name"
+            id="item-name"
+            onChange={change}
+          />
         </div>
         <div className="item-qty">
           <label htmlFor="item-qty">Qty</label>
           <input
+            required
             ref={qty}
             type="number"
             name="quantity"
@@ -71,6 +78,7 @@ export const CreateItemList = ({
         <div className="item-price">
           <label htmlFor="item-price">Price</label>
           <input
+            required
             ref={price}
             type="number"
             name="price"

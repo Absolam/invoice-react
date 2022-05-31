@@ -279,6 +279,11 @@
 }
 
 .add-item:hover {
+  background-color: #dfe3fa;
+}
+
+.create-container {
+  position: relative;
 }
 
 .create-bottom-bar {
@@ -298,12 +303,20 @@
   cursor: pointer;
 }
 
+.create-discard-button:hover {
+  background-color: #2e3249;
+}
+
 .create-save-button {
   background-color: var(--primary-purple);
   color: var(--white);
   padding: 1rem 1.5rem;
   border-radius: 24px;
   cursor: pointer;
+}
+
+.create-save-button:hover {
+  background-color: #9277ff;
 }
 
 .item-delete img {
