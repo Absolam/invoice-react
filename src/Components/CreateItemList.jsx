@@ -7,6 +7,8 @@ export const CreateItemList = ({
   itemValues,
   setItemValues,
   darkMode,
+  windowWidth,
+  itemList,
 }) => {
   let dark = darkMode
     ? {
@@ -96,7 +98,12 @@ export const CreateItemList = ({
             onChange={change}
           />
         </div>
-        <div className="item-delete" onClick={() => remove(id)}>
+        <div
+          className={
+            itemList.length === 0 ? "item-delete wobble" : "item-delete"
+          }
+          onClick={() => remove(id)}
+        >
           <span>{"\u00A0"}</span>
           <img src={trash} alt="delete" />
         </div>

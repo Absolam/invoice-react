@@ -42,6 +42,7 @@ export const Home = ({
           darkMode={darkMode}
           createSideBar={createSideBar}
           setCreateSideBar={setCreateSideBar}
+          windowWidth={windowWidth}
         />
       )}
     </div>

@@ -45,8 +45,8 @@ function App() {
       paymentDue: "9/20/2021",
       description: "Graphic Design",
       paymentTerms: 30,
-      clientName: "Cesar Harrington",
-      clientEmail: "crharrington@mail.com",
+      clientName: "Cesar Bell",
+      clientEmail: "crbell@mail.com",
       status: "Pending",
       senderAddress: {
         street: "19 Union Terrace Ave.",

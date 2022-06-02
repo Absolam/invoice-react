@@ -65,6 +65,7 @@ export const Create = ({
         setItemValues={setItemValues}
         itemList={itemList}
         darkMode={darkMode}
+        windowWidth={windowWidth}
       />,
     ]);
     setNewInvoice((prevState) => ({
@@ -106,6 +107,8 @@ export const Create = ({
         itemValues={itemValues}
         setItemValues={setItemValues}
         darkMode={darkMode}
+        windowWidth={windowWidth}
+        itemList={itemList}
       />,
     ]);
   }

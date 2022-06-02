@@ -17,6 +17,7 @@ export const ViewStatus = ({
       <div>
         {windowWidth > 668 ? (
           <div className="view-status-large">
+            <StatusTag status={currentInvoice.status} darkMode={darkMode} />
             <Button
               text="Delete"
               clname="button-delete"
@@ -28,7 +29,6 @@ export const ViewStatus = ({
             >
               <Button text="Mark as Paid" clname="button-mark" />
             </Link>
-            <StatusTag status={currentInvoice.status} darkMode={darkMode} />
           </div>
         ) : (
           <StatusTag status={currentInvoice.status} darkMode={darkMode} />

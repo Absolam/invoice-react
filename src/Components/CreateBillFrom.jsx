@@ -43,7 +43,7 @@ export const CreateBillFrom = ({ newInvoice, setNewInvoice, darkMode }) => {
           />
         </div>
         <div className="from-post-code">
-          <label htmlFor="from-post-code">Post Code</label>
+          <label htmlFor="from-post-code">Zip Code</label>
           <input
             type="text"
             id="from-post-code"

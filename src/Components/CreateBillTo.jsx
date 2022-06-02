@@ -91,7 +91,7 @@ export const CreateBillTo = ({
           <input type="text" id="to-city" name="city" onChange={change} />
         </div>
         <div className="to-post-code">
-          <label htmlFor="to-post-code">Post Code</label>
+          <label htmlFor="to-post-code">Zip Code</label>
           <input
             type="text"
             id="to-post-code"

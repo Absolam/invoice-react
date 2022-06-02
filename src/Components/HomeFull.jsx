@@ -15,19 +15,6 @@ export const HomeFull = ({
 }) => {
   return (
     <div className="home-full">
-      {/* {createSideBar && windowWidth > 668 ? (
-        <Create
-          setNewInvoice={setNewInvoice}
-          newInvoice={newInvoice}
-          darkMode={darkMode}
-          setListOfInvoices={setListOfInvoices}
-          createSideBar={createSideBar}
-          setCreateSideBar={setCreateSideBar}
-          windowWidth={windowWidth}
-        />
-      ) : (
-        ""
-      )} */}
       <HomeHeader
         listOfInvoices={listOfInvoices}
         darkMode={darkMode}
@@ -39,6 +26,7 @@ export const HomeFull = ({
         listOfInvoices={listOfInvoices}
         setCurrentInvoice={setCurrentInvoice}
         darkMode={darkMode}
+        windowWidth={windowWidth}
       ></HomeList>
     </div>
   );
